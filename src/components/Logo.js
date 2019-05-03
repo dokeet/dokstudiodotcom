@@ -34,9 +34,9 @@ class Logo extends React.Component {
       0.05
 	)
 	.staggerTo("#d_logo g > path", 2, {strokeDashoffset: 0, ease:Power1.easeInOut}, 0.10, "lines+=2")
-	.staggerTo("#o_logo > path", 2, {strokeDashoffset: 200, ease:Power1.easeInOut}, 0.10, "lines+=2" )
-	.staggerTo("#kl_logo > path", 2, {strokeDashoffset: 0, ease:Power1.easeInOut}, 0.10, "lines+=2" )
-	.staggerTo("#kc_logo > path", 2, {strokeDashoffset: 0, ease:Power1.easeInOut}, 0.10, "lines+=3")
+	.staggerTo("#o_logo > path", 2, {strokeDashoffset: 200, ease:Power1.easeInOut}, 0.10, "lines+=3" )
+	.staggerTo("#kl_logo > path", 2, {strokeDashoffset: 0, ease:Power1.easeInOut}, 0.10, "lines+=4" )
+	.staggerTo("#kc_logo > path", 2, {strokeDashoffset: 0, ease:Power1.easeInOut}, 0.10, "lines+=4")
 	.staggerTo("#logodok > g", 1, {y: -100, ease: Power4.easeInOut}, 0.1)
 	.fromTo("#studio", 1, {opacity: 0, y: -100}, {y: 0, opacity: 1})
   }
