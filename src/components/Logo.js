@@ -1,6 +1,6 @@
 import React from "react"
 import {CirclePicker} from 'react-color'
-import { TimelineMax, Power1, Power4 } from "gsap"
+import { TimelineMax, Power1, Power4, TweenMax } from "gsap"
 
 class Logo extends React.Component {
   constructor(props) {
@@ -15,7 +15,8 @@ class Logo extends React.Component {
 	document.documentElement.style.setProperty("--primary5", "hsl(338, 96%,29%)");
 	document.documentElement.style.setProperty("--primary6", "hsl(338, 96%,25%)");
 	document.documentElement.style.setProperty("--primary7", "hsl(338, 96%,21%)");
-	document.documentElement.style.setProperty("--primary8", "hsl(338, 96%,17%)");
+  document.documentElement.style.setProperty("--primary8", "hsl(338, 96%,17%)");
+  TweenMax.set("svglogo", {opacity: 1})
     const tl = new TimelineMax({})
 	tl
 	.add("lines")
@@ -52,6 +53,8 @@ class Logo extends React.Component {
           version="1.1"
           viewBox="0 0 3064 1640"
           xmlSpace="preserve"
+          opacity="0"
+          id="svglogo"
         >
           <defs>
             <clipPath id="dcut">
