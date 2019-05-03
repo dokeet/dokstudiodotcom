@@ -16,7 +16,7 @@ class Logo extends React.Component {
 	document.documentElement.style.setProperty("--primary6", "hsl(338, 96%,25%)");
 	document.documentElement.style.setProperty("--primary7", "hsl(338, 96%,21%)");
   document.documentElement.style.setProperty("--primary8", "hsl(338, 96%,17%)");
-  TweenMax.set("svglogo", {opacity: 1})
+  TweenMax.set("#svglogo", {opacity: 1})
     const tl = new TimelineMax({})
 	tl
 	.add("lines")
