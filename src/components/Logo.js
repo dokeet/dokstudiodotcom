@@ -1,604 +1,637 @@
-import React from "react";
-import { TweenMax, TimelineMax } from "gsap";
+import React from "react"
+import {CirclePicker} from 'react-color'
+import { TimelineMax, Power1, Power4 } from "gsap"
 
 class Logo extends React.Component {
-	constructor(props){
-		super(props);
-	}
-	componentDidMount() {
-		const tl = new TimelineMax({onComplete: () => {tl.reverse()}});
-		tl.staggerTo("#lines > path", 1, {strokeDashoffset: 0}, 0.05);
-		console.log("hola");
-	}
-	render() {
-		return (
-			<>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					height="100%"
-					width="100%"
-					style={{}}
-					version="1.1"
-					viewBox="0 0 3064 1640"
-					xmlSpace="preserve"
-				>
-					<defs>
-						<clipPath id="dcut">
-							<path
-								fill="#333"
-								d="m1140 314c-46-35-132-68-132-68v143l-0.5 430.6c-4 110.3-95 198.8-206.2 198.8-113.8 0-206.4-92.6-206.4-206.4s92.6-206.4 206.4-206.4h3.7 0.5v-131.8h-0.5-3.7c-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3c186.7 0 338.1-151.2 338.3-337.9l0.1-315 0.2-144.2s0.1-3.3 0.1-39.3z"
-							/>
-						</clipPath>
-						<clipPath id="ocut">
-							<path
-								fill="#333"
-								d="m1683 665c35.7 37.1 57.4 87.5 57.4 143 0 113.8-92.6 206.4-206.4 206.4s-206.4-92.6-206.4-206.4 92.6-206.4 206.4-206.4c19.2 0 37.8 2.6 55.5 7.6l35.3-127.2c-28.9-8-59.3-12.3-90.8-12.3-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3 338.3-151.5 338.3-338.3c0-92.8-37.4-176.9-97.9-238l-91.4 95z"
-								className="dok_60"
-							/>
-						</clipPath>
-						<clipPath id="klcut">
-							<path
-								id="path163"
-								fill="#333"
-								d="m2061 245c0.2 302.1-0.2 602.9 0 905h-132v-838.6c16.2-11.2 34.7-22.7 55.5-33.9 27.1-14.6 76.5-32.6 76.5-32.5z"
-								className="dok_61"
-							/>
-						</clipPath>
-						<clipPath id="kccut">
-							<path
-								id="path167"
-								fill="#333"
-								d="m2401 1019.5c-113.8 0-206.4-92.6-206.4-206.4s92.6-206.4 206.4-206.4v-131.9c-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3v-131.9z"
-								className="dok_62"
-							/>
-						</clipPath>
-					</defs>
-					<g id="lines">
-						<path
-							id="path2"
-							strokeMiterlimit={10}
-							d="m801.4 474.3c45.6 0 89.8 8.9 131.5 26.5 40.2 17 76.3 41.4 107.4 72.4 31 31 55.4 67.1 72.4 107.4 17.6 41.6 26.5 85.9 26.5 131.5s-8.9 89.8-26.5 131.5c-17 40.2-41.4 76.3-72.4 107.4-31 31-67.1 55.4-107.4 72.4-41.6 17.6-85.9 26.5-131.5 26.5s-89.8-8.9-131.5-26.5c-40.2-17-76.3-41.4-107.4-72.4-31-31-55.4-67.1-72.4-107.4-17.6-41.6-26.5-85.9-26.5-131.5s8.9-89.8 26.5-131.5c17-40.2 41.4-76.3 72.4-107.4 31-31 67.1-55.4 107.4-72.4 41.7-17.5 85.9-26.5 131.5-26.5m0-0.5c-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3 338.3-151.5 338.3-338.3-151.4-338.3-338.3-338.3z"
-							className="dok_0"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
-						/>
+  constructor(props) {
+    super(props)
+  }
+  componentDidMount() {
 
-						<path
-							id="path6"
-							strokeMiterlimit={10}
-							d="m801.4 342.4c125.5 0 243.4 48.9 332.1 137.6s137.6 206.7 137.6 332.1c0 125.5-48.9 243.4-137.6 332.1s-206.7 137.6-332.1 137.6c-125.5 0-243.4-48.9-332.1-137.6s-137.6-206.7-137.6-332.1c0-125.5 48.9-243.4 137.6-332.1s206.7-137.6 332.1-137.6m0-0.5c-125.6 0-243.7 48.9-332.5 137.7s-137.7 206.9-137.7 332.5 48.9 243.7 137.7 332.5 206.9 137.7 332.5 137.7 243.7-48.9 332.5-137.7 137.7-206.9 137.7-332.5-48.9-243.7-137.7-332.5-206.9-137.7-332.5-137.7z"
-							className="dok_1"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
-						/>
+	document.documentElement.style.setProperty("--primary1", "hsl(338, 96%, 45%)");
+	document.documentElement.style.setProperty("--primary2", "hsl(338, 96%,41%)");
+	document.documentElement.style.setProperty("--primary3", "hsl(338, 96%,37%)");
+	document.documentElement.style.setProperty("--primary4", "hsl(338, 96%,33%)");
+	document.documentElement.style.setProperty("--primary5", "hsl(338, 96%,29%)");
+	document.documentElement.style.setProperty("--primary6", "hsl(338, 96%,25%)");
+	document.documentElement.style.setProperty("--primary7", "hsl(338, 96%,21%)");
+	document.documentElement.style.setProperty("--primary8", "hsl(338, 96%,17%)");
+    const tl = new TimelineMax({})
+	tl
+	.add("lines")
+	.staggerTo("#lines > path", 1, { strokeDashoffset: 0 }, 0.05)
 
-						<path
-							id="path10"
-							strokeMiterlimit={10}
-							d="m801.4 210.5c160.7 0 311.8 62.6 425.4 176.2 113.7 113.7 176.2 264.7 176.2 425.4s-62.6 311.8-176.2 425.4-264.7 176.2-425.4 176.2-311.8-62.6-425.4-176.2-176.2-264.7-176.2-425.4 62.6-311.8 176.2-425.4c113.7-113.6 264.7-176.2 425.4-176.2m0-0.5c-160.8 0-312 62.6-425.7 176.3-113.7 113.8-176.4 265-176.4 425.8s62.6 312 176.4 425.7c113.7 113.7 264.9 176.3 425.7 176.3s312-62.6 425.7-176.3 176.3-264.9 176.3-425.7-62.6-312-176.3-425.7c-113.6-113.7-264.8-176.4-425.7-176.4z"
-							className="dok_2"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
-						/>
+	.staggerTo(
+      "#lines > path",
+      1,
+      {
+        strokeDashoffset: (index, target) => {
 
-						<path
-							id="path14"
-							strokeMiterlimit={10}
-							d="m801.4 78.6c195.9 0 380.1 76.3 518.7 214.8 138.5 138.5 214.8 322.7 214.8 518.7 0 195.9-76.3 380.1-214.8 518.7-138.5 138.5-322.7 214.8-518.7 214.8-195.9 0-380.1-76.3-518.7-214.8-138.5-138.6-214.8-322.8-214.8-518.7s76.3-380.1 214.8-518.7c138.6-138.5 322.8-214.8 518.7-214.8m0-0.5c-196.1 0-380.4 76.3-519 215-138.6 138.6-215 323-215 519 0 196.1 76.4 380.4 215 519s323 215 519 215c196.1 0 380.4-76.3 519-215 138.6-138.6 215-323 215-519s-76.3-380.4-215-519c-138.6-138.6-322.9-215-519-215z"
-							className="dok_3"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
-						/>
+          return target.getTotalLength() + 1
+        },
+      },
+      0.05
+	)
+	.staggerTo("#d_logo g > path", 2, {strokeDashoffset: 0, ease:Power1.easeInOut}, 0.10, "lines+=2")
+	.staggerTo("#o_logo > path", 2, {strokeDashoffset: 200, ease:Power1.easeInOut}, 0.10, "lines+=2" )
+	.staggerTo("#kl_logo > path", 2, {strokeDashoffset: 0, ease:Power1.easeInOut}, 0.10, "lines+=2" )
+	.staggerTo("#kc_logo > path", 2, {strokeDashoffset: 0, ease:Power1.easeInOut}, 0.10, "lines+=3")
+	.staggerTo("#logodok > g", 1, {y: -100, ease: Power4.easeInOut}, 0.1)
+	.fromTo("#studio", 1, {opacity: 0, y: -100}, {y: 0, opacity: 1})
+  }
+  render() {
+    return (
 
-						<path
-							id="path18"
-							strokeMiterlimit={10}
-							d="m801.4 606.2c113.5 0 205.9 92.4 205.9 205.9s-92.4 205.9-205.9 205.9-205.9-92.4-205.9-205.9c0.1-113.5 92.4-205.9 205.9-205.9m0-0.5c-113.8 0-206.4 92.6-206.4 206.4s92.6 206.4 206.4 206.4 206.4-92.6 206.4-206.4-92.6-206.4-206.4-206.4z"
-							className="dok_4"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
-						/>
+      <>
+      {/* <CirclePicker colors={["hsl(338, 96%, 45%)", "#e91e63", "#9c27b0", "#673ab7", "#3f51b5", "#2196f3", "#03a9f4", "#00bcd4", "#009688", "#4caf50", "#8bc34a", "#cddc39"]}/> */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="100%"
+          width="100%"
+          style={{}}
+          version="1.1"
+          viewBox="0 0 3064 1640"
+          xmlSpace="preserve"
+        >
+          <defs>
+            <clipPath id="dcut">
+              <path
+                fill="#333"
+                d="m1140 314c-46-35-132-68-132-68v143l-0.5 430.6c-4 110.3-95 198.8-206.2 198.8-113.8 0-206.4-92.6-206.4-206.4s92.6-206.4 206.4-206.4h3.7 0.5v-131.8h-0.5-3.7c-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3c186.7 0 338.1-151.2 338.3-337.9l0.1-315 0.2-144.2s0.1-3.3 0.1-39.3z"
+              />
+            </clipPath>
+            <clipPath id="ocut">
+              <path
+                fill="#333"
+                d="m1683 665c35.7 37.1 57.4 87.5 57.4 143 0 113.8-92.6 206.4-206.4 206.4s-206.4-92.6-206.4-206.4 92.6-206.4 206.4-206.4c19.2 0 37.8 2.6 55.5 7.6l35.3-127.2c-28.9-8-59.3-12.3-90.8-12.3-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3 338.3-151.5 338.3-338.3c0-92.8-37.4-176.9-97.9-238l-91.4 95z"
+                className="dok_60"
+              />
+            </clipPath>
+            <clipPath id="klcut">
+              <path
+                id="path163"
+                fill="#333"
+                d="m2061 245c0.2 302.1-0.2 602.9 0 905h-132v-838.6c16.2-11.2 34.7-22.7 55.5-33.9 27.1-14.6 76.5-32.6 76.5-32.5z"
+                className="dok_61"
+              />
+            </clipPath>
+            <clipPath id="kccut">
+              <path
+                id="path167"
+                fill="#333"
+                d="m2401 1019.5c-113.8 0-206.4-92.6-206.4-206.4s92.6-206.4 206.4-206.4v-131.9c-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3v-131.9z"
+                className="dok_62"
+              />
+            </clipPath>
+          </defs>
+          <g id="lines">
+            <path
+              id="path2"
+              strokeMiterlimit={10}
+              d="m801.4 474.3c45.6 0 89.8 8.9 131.5 26.5 40.2 17 76.3 41.4 107.4 72.4 31 31 55.4 67.1 72.4 107.4 17.6 41.6 26.5 85.9 26.5 131.5s-8.9 89.8-26.5 131.5c-17 40.2-41.4 76.3-72.4 107.4-31 31-67.1 55.4-107.4 72.4-41.6 17.6-85.9 26.5-131.5 26.5s-89.8-8.9-131.5-26.5c-40.2-17-76.3-41.4-107.4-72.4-31-31-55.4-67.1-72.4-107.4-17.6-41.6-26.5-85.9-26.5-131.5s8.9-89.8 26.5-131.5c17-40.2 41.4-76.3 72.4-107.4 31-31 67.1-55.4 107.4-72.4 41.7-17.5 85.9-26.5 131.5-26.5m0-0.5c-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3 338.3-151.5 338.3-338.3-151.4-338.3-338.3-338.3z"
+              className="dok_0"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
+            />
 
-						<path
-							id="path22"
-							strokeMiterlimit={10}
-							d="m2268 472.2c45.6 0 89.8 8.9 131.5 26.5 40.2 17 76.3 41.4 107.4 72.4 31 31 55.4 67.1 72.4 107.4 17.6 41.6 26.5 85.9 26.5 131.5s-8.9 89.8-26.5 131.5c-17 40.2-41.4 76.3-72.4 107.4-31 31-67.1 55.4-107.4 72.4-41.6 17.6-85.9 26.5-131.5 26.5s-89.8-8.9-131.5-26.5c-40.2-17-76.3-41.4-107.4-72.4-31-31-55.4-67.1-72.4-107.4-17.6-41.6-26.5-85.9-26.5-131.5s8.9-89.8 26.5-131.5c17-40.2 41.4-76.3 72.4-107.4 31-31 67.1-55.4 107.4-72.4 41.7-17.6 85.9-26.5 131.5-26.5m0-0.5c-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3 338.3-151.5 338.3-338.3-151.4-338.3-338.3-338.3z"
-							className="dok_5"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
-						/>
+            <path
+              id="path6"
+              strokeMiterlimit={10}
+              d="m801.4 342.4c125.5 0 243.4 48.9 332.1 137.6s137.6 206.7 137.6 332.1c0 125.5-48.9 243.4-137.6 332.1s-206.7 137.6-332.1 137.6c-125.5 0-243.4-48.9-332.1-137.6s-137.6-206.7-137.6-332.1c0-125.5 48.9-243.4 137.6-332.1s206.7-137.6 332.1-137.6m0-0.5c-125.6 0-243.7 48.9-332.5 137.7s-137.7 206.9-137.7 332.5 48.9 243.7 137.7 332.5 206.9 137.7 332.5 137.7 243.7-48.9 332.5-137.7 137.7-206.9 137.7-332.5-48.9-243.7-137.7-332.5-206.9-137.7-332.5-137.7z"
+              className="dok_1"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
+            />
 
-						<path
-							id="path26"
-							strokeMiterlimit={10}
-							d="m2268 340.3c125.5 0 243.4 48.9 332.1 137.6s137.6 206.7 137.6 332.1c0 125.5-48.9 243.4-137.6 332.1s-206.7 137.6-332.1 137.6c-125.5 0-243.4-48.9-332.1-137.6s-137.6-206.7-137.6-332.1c0-125.5 48.9-243.4 137.6-332.1s206.7-137.6 332.1-137.6m0-0.5c-125.6 0-243.7 48.9-332.5 137.7s-137.7 206.9-137.7 332.5 48.9 243.7 137.7 332.5 206.9 137.7 332.5 137.7 243.7-48.9 332.5-137.7 137.7-206.9 137.7-332.5-48.9-243.7-137.7-332.5-206.9-137.7-332.5-137.7z"
-							className="dok_6"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
-						/>
+            <path
+              id="path10"
+              strokeMiterlimit={10}
+              d="m801.4 210.5c160.7 0 311.8 62.6 425.4 176.2 113.7 113.7 176.2 264.7 176.2 425.4s-62.6 311.8-176.2 425.4-264.7 176.2-425.4 176.2-311.8-62.6-425.4-176.2-176.2-264.7-176.2-425.4 62.6-311.8 176.2-425.4c113.7-113.6 264.7-176.2 425.4-176.2m0-0.5c-160.8 0-312 62.6-425.7 176.3-113.7 113.8-176.4 265-176.4 425.8s62.6 312 176.4 425.7c113.7 113.7 264.9 176.3 425.7 176.3s312-62.6 425.7-176.3 176.3-264.9 176.3-425.7-62.6-312-176.3-425.7c-113.6-113.7-264.8-176.4-425.7-176.4z"
+              className="dok_2"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
+            />
 
-						<path
-							id="path30"
-							strokeMiterlimit={10}
-							d="m2268 208.4c160.7 0 311.8 62.6 425.4 176.2s176.2 264.7 176.2 425.4-62.6 311.8-176.2 425.4-264.7 176.2-425.4 176.2-311.8-62.6-425.4-176.2-176.2-264.7-176.2-425.4 62.6-311.8 176.2-425.4c113.7-113.6 264.7-176.2 425.4-176.2m0-0.5c-160.8 0-312 62.6-425.7 176.3-113.7 113.8-176.4 265-176.4 425.8s62.6 312 176.4 425.7c113.7 113.7 264.9 176.3 425.7 176.3s312-62.6 425.7-176.3 176.3-264.9 176.3-425.7-62.6-312-176.3-425.7c-113.6-113.8-264.8-176.4-425.7-176.4z"
-							className="dok_7"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
-						/>
+            <path
+              id="path14"
+              strokeMiterlimit={10}
+              d="m801.4 78.6c195.9 0 380.1 76.3 518.7 214.8 138.5 138.5 214.8 322.7 214.8 518.7 0 195.9-76.3 380.1-214.8 518.7-138.5 138.5-322.7 214.8-518.7 214.8-195.9 0-380.1-76.3-518.7-214.8-138.5-138.6-214.8-322.8-214.8-518.7s76.3-380.1 214.8-518.7c138.6-138.5 322.8-214.8 518.7-214.8m0-0.5c-196.1 0-380.4 76.3-519 215-138.6 138.6-215 323-215 519 0 196.1 76.4 380.4 215 519s323 215 519 215c196.1 0 380.4-76.3 519-215 138.6-138.6 215-323 215-519s-76.3-380.4-215-519c-138.6-138.6-322.9-215-519-215z"
+              className="dok_3"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
+            />
 
-						<path
-							id="path34"
-							strokeMiterlimit={10}
-							d="m2268 76.5c195.9 0 380.1 76.3 518.7 214.8 138.5 138.5 214.8 322.7 214.8 518.7 0 195.9-76.3 380.1-214.8 518.7-138.5 138.5-322.7 214.8-518.7 214.8-195.9 0-380.1-76.3-518.7-214.8-138.5-138.5-214.8-322.7-214.8-518.7 0-195.9 76.3-380.1 214.8-518.7 138.6-138.5 322.8-214.8 518.7-214.8m0-0.5c-196.1 0-380.4 76.3-519 215-138.6 138.6-215 323-215 519 0 196.1 76.4 380.4 215 519s323 215 519 215c196.1 0 380.4-76.3 519-215 138.6-138.6 215-323 215-519s-76.3-380.4-215-519c-138.6-138.7-322.9-215-519-215z"
-							className="dok_8"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
-						/>
+            <path
+              id="path18"
+              strokeMiterlimit={10}
+              d="m801.4 606.2c113.5 0 205.9 92.4 205.9 205.9s-92.4 205.9-205.9 205.9-205.9-92.4-205.9-205.9c0.1-113.5 92.4-205.9 205.9-205.9m0-0.5c-113.8 0-206.4 92.6-206.4 206.4s92.6 206.4 206.4 206.4 206.4-92.6 206.4-206.4-92.6-206.4-206.4-206.4z"
+              className="dok_4"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
+            />
 
-						<path
-							id="path38"
-							strokeMiterlimit={10}
-							d="m2268 604.1c113.5 0 205.9 92.4 205.9 205.9s-92.4 205.9-205.9 205.9-205.9-92.4-205.9-205.9c0.1-113.5 92.4-205.9 205.9-205.9m0-0.5c-113.8 0-206.4 92.6-206.4 206.4s92.6 206.4 206.4 206.4 206.4-92.6 206.4-206.4-92.6-206.4-206.4-206.4z"
-							className="dok_9"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
-						/>
+            <path
+              id="path22"
+              strokeMiterlimit={10}
+              d="m2268 472.2c45.6 0 89.8 8.9 131.5 26.5 40.2 17 76.3 41.4 107.4 72.4 31 31 55.4 67.1 72.4 107.4 17.6 41.6 26.5 85.9 26.5 131.5s-8.9 89.8-26.5 131.5c-17 40.2-41.4 76.3-72.4 107.4-31 31-67.1 55.4-107.4 72.4-41.6 17.6-85.9 26.5-131.5 26.5s-89.8-8.9-131.5-26.5c-40.2-17-76.3-41.4-107.4-72.4-31-31-55.4-67.1-72.4-107.4-17.6-41.6-26.5-85.9-26.5-131.5s8.9-89.8 26.5-131.5c17-40.2 41.4-76.3 72.4-107.4 31-31 67.1-55.4 107.4-72.4 41.7-17.6 85.9-26.5 131.5-26.5m0-0.5c-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3 338.3-151.5 338.3-338.3-151.4-338.3-338.3-338.3z"
+              className="dok_5"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
+            />
 
-						<path
-							id="path42"
-							strokeMiterlimit={10}
-							d="m1534.1 470.2c45.6 0 89.8 8.9 131.5 26.5 40.2 17 76.3 41.4 107.4 72.4 31 31 55.4 67.1 72.4 107.4 17.6 41.6 26.5 85.9 26.5 131.5s-8.9 89.8-26.5 131.5c-17 40.2-41.4 76.3-72.4 107.4-31 31-67.1 55.4-107.4 72.4-41.6 17.6-85.9 26.5-131.5 26.5s-89.8-8.9-131.5-26.5c-40.2-17-76.3-41.4-107.4-72.4-31-31-55.4-67.1-72.4-107.4-17.6-41.6-26.5-85.9-26.5-131.5s8.9-89.8 26.5-131.5c17-40.2 41.4-76.3 72.4-107.4 31-31 67.1-55.4 107.4-72.4 41.6-17.6 85.9-26.5 131.5-26.5m0-0.5c-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3 338.3-151.5 338.3-338.3c0-186.9-151.5-338.3-338.3-338.3z"
-							className="dok_10"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
-						/>
+            <path
+              id="path26"
+              strokeMiterlimit={10}
+              d="m2268 340.3c125.5 0 243.4 48.9 332.1 137.6s137.6 206.7 137.6 332.1c0 125.5-48.9 243.4-137.6 332.1s-206.7 137.6-332.1 137.6c-125.5 0-243.4-48.9-332.1-137.6s-137.6-206.7-137.6-332.1c0-125.5 48.9-243.4 137.6-332.1s206.7-137.6 332.1-137.6m0-0.5c-125.6 0-243.7 48.9-332.5 137.7s-137.7 206.9-137.7 332.5 48.9 243.7 137.7 332.5 206.9 137.7 332.5 137.7 243.7-48.9 332.5-137.7 137.7-206.9 137.7-332.5-48.9-243.7-137.7-332.5-206.9-137.7-332.5-137.7z"
+              className="dok_6"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
+            />
 
-						<path
-							id="path46"
-							strokeMiterlimit={10}
-							d="m1534.1 338.3c125.5 0 243.4 48.9 332.1 137.6s137.6 206.7 137.6 332.1c0 125.5-48.9 243.4-137.6 332.1s-206.7 137.6-332.1 137.6c-125.5 0-243.4-48.9-332.1-137.6s-137.6-206.7-137.6-332.1c0-125.5 48.9-243.4 137.6-332.1 88.7-88.8 206.6-137.6 332.1-137.6m0-0.5c-125.6 0-243.7 48.9-332.5 137.7s-137.7 206.9-137.7 332.5 48.9 243.7 137.7 332.5 206.9 137.7 332.5 137.7 243.7-48.9 332.5-137.7 137.7-206.9 137.7-332.5-48.9-243.7-137.7-332.5c-88.9-88.8-206.9-137.7-332.5-137.7z"
-							className="dok_11"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
-						/>
+            <path
+              id="path30"
+              strokeMiterlimit={10}
+              d="m2268 208.4c160.7 0 311.8 62.6 425.4 176.2s176.2 264.7 176.2 425.4-62.6 311.8-176.2 425.4-264.7 176.2-425.4 176.2-311.8-62.6-425.4-176.2-176.2-264.7-176.2-425.4 62.6-311.8 176.2-425.4c113.7-113.6 264.7-176.2 425.4-176.2m0-0.5c-160.8 0-312 62.6-425.7 176.3-113.7 113.8-176.4 265-176.4 425.8s62.6 312 176.4 425.7c113.7 113.7 264.9 176.3 425.7 176.3s312-62.6 425.7-176.3 176.3-264.9 176.3-425.7-62.6-312-176.3-425.7c-113.6-113.8-264.8-176.4-425.7-176.4z"
+              className="dok_7"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
+            />
 
-						<path
-							id="path50"
-							strokeMiterlimit={10}
-							d="m1534.1 206.4c160.7 0 311.8 62.6 425.4 176.2s176.2 264.7 176.2 425.4-62.6 311.8-176.2 425.4-264.7 176.2-425.4 176.2-311.8-62.6-425.4-176.2c-113.7-113.7-176.2-264.8-176.2-425.4 0-160.7 62.6-311.8 176.2-425.4 113.6-113.7 264.7-176.2 425.4-176.2m0-0.5c-160.8 0-312 62.6-425.7 176.3-113.8 113.7-176.4 264.9-176.4 425.8s62.6 312 176.4 425.7c113.7 113.7 264.9 176.3 425.7 176.3s312-62.6 425.7-176.3 176.3-264.9 176.3-425.7-62.6-312-176.3-425.7c-113.7-113.8-264.9-176.4-425.7-176.4z"
-							className="dok_12"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
-						/>
+            <path
+              id="path34"
+              strokeMiterlimit={10}
+              d="m2268 76.5c195.9 0 380.1 76.3 518.7 214.8 138.5 138.5 214.8 322.7 214.8 518.7 0 195.9-76.3 380.1-214.8 518.7-138.5 138.5-322.7 214.8-518.7 214.8-195.9 0-380.1-76.3-518.7-214.8-138.5-138.5-214.8-322.7-214.8-518.7 0-195.9 76.3-380.1 214.8-518.7 138.6-138.5 322.8-214.8 518.7-214.8m0-0.5c-196.1 0-380.4 76.3-519 215-138.6 138.6-215 323-215 519 0 196.1 76.4 380.4 215 519s323 215 519 215c196.1 0 380.4-76.3 519-215 138.6-138.6 215-323 215-519s-76.3-380.4-215-519c-138.6-138.7-322.9-215-519-215z"
+              className="dok_8"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
+            />
 
-						<path
-							id="path54"
-							strokeMiterlimit={10}
-							d="m1534.1 74.5c195.9 0 380.1 76.3 518.7 214.8 138.5 138.5 214.8 322.7 214.8 518.7 0 195.9-76.3 380.1-214.8 518.7-138.5 138.5-322.7 214.8-518.7 214.8-195.9 0-380.1-76.3-518.7-214.8-138.5-138.6-214.8-322.8-214.8-518.7s76.3-380.1 214.8-518.7 322.7-214.8 518.7-214.8m0-0.5c-196.1 0-380.4 76.3-519 215-138.6 138.6-215 323-215 519 0 196.1 76.4 380.4 215 519s323 215 519 215c196.1 0 380.4-76.3 519-215 138.6-138.6 215-323 215-519s-76.3-380.4-215-519c-138.7-138.7-323-215-519-215z"
-							className="dok_13"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
-						/>
+            <path
+              id="path38"
+              strokeMiterlimit={10}
+              d="m2268 604.1c113.5 0 205.9 92.4 205.9 205.9s-92.4 205.9-205.9 205.9-205.9-92.4-205.9-205.9c0.1-113.5 92.4-205.9 205.9-205.9m0-0.5c-113.8 0-206.4 92.6-206.4 206.4s92.6 206.4 206.4 206.4 206.4-92.6 206.4-206.4-92.6-206.4-206.4-206.4z"
+              className="dok_9"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
+            />
 
-						<path
-							id="path58"
-							strokeMiterlimit={10}
-							d="m1534.1 602.1c113.5 0 205.9 92.4 205.9 205.9s-92.4 205.9-205.9 205.9-205.9-92.4-205.9-205.9c0-113.6 92.3-205.9 205.9-205.9m0-0.5c-113.8 0-206.4 92.6-206.4 206.4s92.6 206.4 206.4 206.4 206.4-92.6 206.4-206.4-92.6-206.4-206.4-206.4z"
-							className="dok_14"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
-						/>
+            <path
+              id="path42"
+              strokeMiterlimit={10}
+              d="m1534.1 470.2c45.6 0 89.8 8.9 131.5 26.5 40.2 17 76.3 41.4 107.4 72.4 31 31 55.4 67.1 72.4 107.4 17.6 41.6 26.5 85.9 26.5 131.5s-8.9 89.8-26.5 131.5c-17 40.2-41.4 76.3-72.4 107.4-31 31-67.1 55.4-107.4 72.4-41.6 17.6-85.9 26.5-131.5 26.5s-89.8-8.9-131.5-26.5c-40.2-17-76.3-41.4-107.4-72.4-31-31-55.4-67.1-72.4-107.4-17.6-41.6-26.5-85.9-26.5-131.5s8.9-89.8 26.5-131.5c17-40.2 41.4-76.3 72.4-107.4 31-31 67.1-55.4 107.4-72.4 41.6-17.6 85.9-26.5 131.5-26.5m0-0.5c-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3 338.3-151.5 338.3-338.3c0-186.9-151.5-338.3-338.3-338.3z"
+              className="dok_10"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
+            />
 
-						<path
-							d="M-1794.5,812.5L3404.5,812.5"
-							className="dok_15"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M805,1900.5L805,-275.5"
-							className="dok_16"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M-177.3,1794.8L1787.3,-169.8"
-							className="dok_17"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M-66.8,-59.3L1676.8,1684.3"
-							className="dok_18"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M1139.5,-360L1139.5,1816"
-							className="dok_19"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M1271.5,-360L1271.5,1816"
-							className="dok_20"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M1403.5,-360L1403.5,1816"
-							className="dok_21"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M1929.5,-360L1929.5,1816"
-							className="dok_22"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M2061.5,-360L2061.5,1816"
-							className="dok_23"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M1535.5,-345L1535.5,1831"
-							className="dok_24"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M463.5,-345L463.5,1831"
-							className="dok_25"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M331.5,-337L331.5,1839"
-							className="dok_26"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M199.5,-345L199.5,1831"
-							className="dok_27"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M2401.5,-375L2401.5,1801"
-							className="dok_28"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M2062.5,-360L2062.5,1816"
-							className="dok_29"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M67.5,-345L67.5,1831"
-							className="dok_30"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M-1841.5,474.5L3453.5,474.5"
-							className="dok_31"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M-1500.5,341.5L3112.5,341.5"
-							className="dok_32"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M-2978.5,245.5L4588.5,245.5"
-							className="dok_33"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M-959.5,79.5L4533.5,79.5"
-							className="dok_34"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M-2960.5,1149.5L4572.5,1149.5"
-							className="dok_35"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M-1632.5,1280.5L3244.5,1280.5"
-							className="dok_36"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M-1860.5,1414.5L3472.5,1414.5"
-							className="dok_37"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M-1814.5,1546.5L3424.5,1546.5"
-							className="dok_38"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M1180,812.5L3356,812.5"
-							className="dok_39"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M4657,876.5L-166,876.5"
-							className="dok_40"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M4661,742.5L-162,742.5"
-							className="dok_41"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M2268,1900.5L2268,-275.5"
-							className="dok_42"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M3113.8,-33.3L1422.3,1658.3"
-							className="dok_43"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M3229.3,1592.8L1520.8,-115.8"
-							className="dok_44"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M1433.7,1166.8L2972.3,-371.8"
-							className="dok_45"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M3035.3,1243.8L1496.7,-294.8"
-							className="dok_46"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M1178,1151.5L3354,1151.5"
-							className="dok_47"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M1292.8,2124.8L3239.3,178.3"
-							className="dok_48"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M1986.4,1863.4L2549.6,-238.4"
-							className="dok_49"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M2549.6,1863.4L1986.4,-238.4"
-							className="dok_50"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M646.3,1700.3L2423.8,-77.3"
-							className="dok_51"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M2425.8,1702.3L644.3,-79.3"
-							className="dok_52"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M2461.5,1668.5L718.5,-75.5"
-							className="dok_53"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M2347.5,1742.5L604.5,-1.5"
-							className="dok_54"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M1253.4,1862.4L1816.6,-239.4"
-							className="dok_55"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-						<path
-							d="M1816.6,1862.4L1253.4,-239.4"
-							className="dok_56"
-							style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
-						/>
-					</g>
-					<g id="Capa_6" display="none" style={{ display: "none" }}>
-						<path
-							id="path178"
-							d="m1171 314c-46-35-132-68-132-68v143l-0.5 430.6c-4 110.3-95 198.8-206.2 198.8-113.8 0-206.4-92.6-206.4-206.4s92.6-206.4 206.4-206.4h3.7 0.5v-131.8h-0.5-3.7c-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3c186.7 0 338.1-151.2 338.3-337.9l0.1-315 0.2-144.2s0.1-3.3 0.1-39.3z"
-							className="dok_64"
-							display="inline"
-							style={{ display: "inline", fill: "#0ff" }}
-						/>
-						<path
-							id="path180"
-							d="m1714 665c35.7 37.1 57.4 87.5 57.4 143 0 113.8-92.6 206.4-206.4 206.4s-206.4-92.6-206.4-206.4 92.6-206.4 206.4-206.4c19.2 0 37.8 2.6 55.5 7.6l35.3-127.2c-28.9-8-59.3-12.3-90.8-12.3-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3 338.3-151.5 338.3-338.3c0-92.8-37.4-176.9-97.9-238z"
-							className="dok_65"
-							style={{ fill: "#0ff" }}
-						/>
+            <path
+              id="path46"
+              strokeMiterlimit={10}
+              d="m1534.1 338.3c125.5 0 243.4 48.9 332.1 137.6s137.6 206.7 137.6 332.1c0 125.5-48.9 243.4-137.6 332.1s-206.7 137.6-332.1 137.6c-125.5 0-243.4-48.9-332.1-137.6s-137.6-206.7-137.6-332.1c0-125.5 48.9-243.4 137.6-332.1 88.7-88.8 206.6-137.6 332.1-137.6m0-0.5c-125.6 0-243.7 48.9-332.5 137.7s-137.7 206.9-137.7 332.5 48.9 243.7 137.7 332.5 206.9 137.7 332.5 137.7 243.7-48.9 332.5-137.7 137.7-206.9 137.7-332.5-48.9-243.7-137.7-332.5c-88.9-88.8-206.9-137.7-332.5-137.7z"
+              className="dok_11"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
+            />
 
-						<path
-							id="path184"
-							d="m2092 245c0.2 302.1-0.2 602.9 0 905h-132v-838.6c16.2-11.2 34.7-22.7 55.5-33.9 27.1-14.6 76.5-32.6 76.5-32.5z"
-							className="dok_66"
-							style={{ fill: "#0ff" }}
-						/>
+            <path
+              id="path50"
+              strokeMiterlimit={10}
+              d="m1534.1 206.4c160.7 0 311.8 62.6 425.4 176.2s176.2 264.7 176.2 425.4-62.6 311.8-176.2 425.4-264.7 176.2-425.4 176.2-311.8-62.6-425.4-176.2c-113.7-113.7-176.2-264.8-176.2-425.4 0-160.7 62.6-311.8 176.2-425.4 113.6-113.7 264.7-176.2 425.4-176.2m0-0.5c-160.8 0-312 62.6-425.7 176.3-113.8 113.7-176.4 264.9-176.4 425.8s62.6 312 176.4 425.7c113.7 113.7 264.9 176.3 425.7 176.3s312-62.6 425.7-176.3 176.3-264.9 176.3-425.7-62.6-312-176.3-425.7c-113.7-113.8-264.9-176.4-425.7-176.4z"
+              className="dok_12"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
+            />
 
-						<path
-							id="path188"
-							d="m2432 1019.5c-113.8 0-206.4-92.6-206.4-206.4s92.6-206.4 206.4-206.4v-131.9c-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3z"
-							className="dok_67"
-							style={{ fill: "#0ff" }}
-						/>
+            <path
+              id="path54"
+              strokeMiterlimit={10}
+              d="m1534.1 74.5c195.9 0 380.1 76.3 518.7 214.8 138.5 138.5 214.8 322.7 214.8 518.7 0 195.9-76.3 380.1-214.8 518.7-138.5 138.5-322.7 214.8-518.7 214.8-195.9 0-380.1-76.3-518.7-214.8-138.5-138.6-214.8-322.8-214.8-518.7s76.3-380.1 214.8-518.7 322.7-214.8 518.7-214.8m0-0.5c-196.1 0-380.4 76.3-519 215-138.6 138.6-215 323-215 519 0 196.1 76.4 380.4 215 519s323 215 519 215c196.1 0 380.4-76.3 519-215 138.6-138.6 215-323 215-519s-76.3-380.4-215-519c-138.7-138.7-323-215-519-215z"
+              className="dok_13"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
+            />
 
-						<path
-							id="path192"
-							d="m1127 314c-46-35-132-68-132-68v143l-0.5 430.6c-4 110.3-95 198.8-206.2 198.8-113.8 0-206.4-92.6-206.4-206.4s92.6-206.4 206.4-206.4h3.7 0.5v-131.8h-0.5-3.7c-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3c186.7 0 338.1-151.2 338.3-337.9l0.1-315 0.2-144.2s0.1-3.3 0.1-39.3z"
-							className="dok_68"
-							display="inline"
-							style={{ display: "inline", fill: "#f00" }}
-						/>
-						<path
-							id="path194"
-							d="m1670 665c35.7 37.1 57.4 87.5 57.4 143 0 113.8-92.6 206.4-206.4 206.4s-206.4-92.6-206.4-206.4 92.6-206.4 206.4-206.4c19.2 0 37.8 2.6 55.5 7.6l35.3-127.2c-28.9-8-59.3-12.3-90.8-12.3-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3 338.3-151.5 338.3-338.3c0-92.8-37.4-176.9-97.9-238z"
-							className="dok_69"
-							style={{ fill: "#f00" }}
-						/>
+            <path
+              id="path58"
+              strokeMiterlimit={10}
+              d="m1534.1 602.1c113.5 0 205.9 92.4 205.9 205.9s-92.4 205.9-205.9 205.9-205.9-92.4-205.9-205.9c0-113.6 92.3-205.9 205.9-205.9m0-0.5c-113.8 0-206.4 92.6-206.4 206.4s92.6 206.4 206.4 206.4 206.4-92.6 206.4-206.4-92.6-206.4-206.4-206.4z"
+              className="dok_14"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 2 }}
+            />
 
-						<path
-							id="path198"
-							d="m2048 245c0.2 302.1-0.2 602.9 0 905h-132v-838.6c16.2-11.2 34.7-22.7 55.5-33.9 27.1-14.6 76.5-32.6 76.5-32.5z"
-							className="dok_70"
-							style={{ fill: "#f00" }}
-						/>
+            <path
+              d="M-1794.5,812.5L3404.5,812.5"
+              className="dok_15"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M805,1900.5L805,-275.5"
+              className="dok_16"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M-177.3,1794.8L1787.3,-169.8"
+              className="dok_17"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M-66.8,-59.3L1676.8,1684.3"
+              className="dok_18"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M1139.5,-360L1139.5,1816"
+              className="dok_19"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M1271.5,-360L1271.5,1816"
+              className="dok_20"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M1403.5,-360L1403.5,1816"
+              className="dok_21"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M1929.5,-360L1929.5,1816"
+              className="dok_22"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M2061.5,-360L2061.5,1816"
+              className="dok_23"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M1535.5,-345L1535.5,1831"
+              className="dok_24"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M463.5,-345L463.5,1831"
+              className="dok_25"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M331.5,-337L331.5,1839"
+              className="dok_26"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M199.5,-345L199.5,1831"
+              className="dok_27"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M2401.5,-375L2401.5,1801"
+              className="dok_28"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M2062.5,-360L2062.5,1816"
+              className="dok_29"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M67.5,-345L67.5,1831"
+              className="dok_30"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M-1841.5,474.5L3453.5,474.5"
+              className="dok_31"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M-1500.5,341.5L3112.5,341.5"
+              className="dok_32"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M-2978.5,245.5L4588.5,245.5"
+              className="dok_33"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M-959.5,79.5L4533.5,79.5"
+              className="dok_34"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M-2960.5,1149.5L4572.5,1149.5"
+              className="dok_35"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M-1632.5,1280.5L3244.5,1280.5"
+              className="dok_36"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M-1860.5,1414.5L3472.5,1414.5"
+              className="dok_37"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M-1814.5,1546.5L3424.5,1546.5"
+              className="dok_38"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M1180,812.5L3356,812.5"
+              className="dok_39"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M4657,876.5L-166,876.5"
+              className="dok_40"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M4661,742.5L-162,742.5"
+              className="dok_41"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M2268,1900.5L2268,-275.5"
+              className="dok_42"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M3113.8,-33.3L1422.3,1658.3"
+              className="dok_43"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M3229.3,1592.8L1520.8,-115.8"
+              className="dok_44"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M1433.7,1166.8L2972.3,-371.8"
+              className="dok_45"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M3035.3,1243.8L1496.7,-294.8"
+              className="dok_46"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M1178,1151.5L3354,1151.5"
+              className="dok_47"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M1292.8,2124.8L3239.3,178.3"
+              className="dok_48"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M1986.4,1863.4L2549.6,-238.4"
+              className="dok_49"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M2549.6,1863.4L1986.4,-238.4"
+              className="dok_50"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M646.3,1700.3L2423.8,-77.3"
+              className="dok_51"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M2425.8,1702.3L644.3,-79.3"
+              className="dok_52"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M2461.5,1668.5L718.5,-75.5"
+              className="dok_53"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M2347.5,1742.5L604.5,-1.5"
+              className="dok_54"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M1253.4,1862.4L1816.6,-239.4"
+              className="dok_55"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+            <path
+              d="M1816.6,1862.4L1253.4,-239.4"
+              className="dok_56"
+              style={{ fill: "none", strokeMiterlimit: 10, strokeWidth: 3 }}
+            />
+          </g>
+          <g id="Capa_6" display="none" style={{ display: "none" }}>
+            <path
+              id="path178"
+              d="m1171 314c-46-35-132-68-132-68v143l-0.5 430.6c-4 110.3-95 198.8-206.2 198.8-113.8 0-206.4-92.6-206.4-206.4s92.6-206.4 206.4-206.4h3.7 0.5v-131.8h-0.5-3.7c-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3c186.7 0 338.1-151.2 338.3-337.9l0.1-315 0.2-144.2s0.1-3.3 0.1-39.3z"
+              className="dok_64"
+              display="inline"
+              style={{ display: "inline", fill: "#0ff" }}
+            />
+            <path
+              id="path180"
+              d="m1714 665c35.7 37.1 57.4 87.5 57.4 143 0 113.8-92.6 206.4-206.4 206.4s-206.4-92.6-206.4-206.4 92.6-206.4 206.4-206.4c19.2 0 37.8 2.6 55.5 7.6l35.3-127.2c-28.9-8-59.3-12.3-90.8-12.3-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3 338.3-151.5 338.3-338.3c0-92.8-37.4-176.9-97.9-238z"
+              className="dok_65"
+              style={{ fill: "#0ff" }}
+            />
 
-						<path
-							id="path202"
-							d="m2388 1019.5c-113.8 0-206.4-92.6-206.4-206.4s92.6-206.4 206.4-206.4v-131.9c-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3z"
-							className="dok_71"
-							style={{ fill: "#f00" }}
-						/>
+            <path
+              id="path184"
+              d="m2092 245c0.2 302.1-0.2 602.9 0 905h-132v-838.6c16.2-11.2 34.7-22.7 55.5-33.9 27.1-14.6 76.5-32.6 76.5-32.5z"
+              className="dok_66"
+              style={{ fill: "#0ff" }}
+            />
 
-						<path
-							id="path206"
-							d="m1139 314c-46-35-132-68-132-68v143l-0.5 430.6c-4 110.3-95 198.8-206.2 198.8-113.8 0-206.4-92.6-206.4-206.4s92.6-206.4 206.4-206.4h3.7 0.5v-131.8h-0.5-3.7c-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3c186.7 0 338.1-151.2 338.3-337.9l0.1-315 0.2-144.2s0.1-3.3 0.1-39.3z"
-							className="dok_72"
-							display="inline"
-							style={{ display: "inline" }}
-						/>
-						<path
-							id="path208"
-							d="m1682 665c35.7 37.1 57.4 87.5 57.4 143 0 113.8-92.6 206.4-206.4 206.4s-206.4-92.6-206.4-206.4 92.6-206.4 206.4-206.4c19.2 0 37.8 2.6 55.5 7.6l35.3-127.2c-28.9-8-59.3-12.3-90.8-12.3-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3 338.3-151.5 338.3-338.3c0-92.8-37.4-176.9-97.9-238z"
-							className="dok_73"
-						/>
+            <path
+              id="path188"
+              d="m2432 1019.5c-113.8 0-206.4-92.6-206.4-206.4s92.6-206.4 206.4-206.4v-131.9c-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3z"
+              className="dok_67"
+              style={{ fill: "#0ff" }}
+            />
 
-						<path
-							id="path212"
-							d="m2060 245c0.2 302.1-0.2 602.9 0 905h-132v-838.6c16.2-11.2 34.7-22.7 55.5-33.9 27.1-14.6 76.5-32.6 76.5-32.5z"
-							className="dok_74"
-						/>
+            <path
+              id="path192"
+              d="m1127 314c-46-35-132-68-132-68v143l-0.5 430.6c-4 110.3-95 198.8-206.2 198.8-113.8 0-206.4-92.6-206.4-206.4s92.6-206.4 206.4-206.4h3.7 0.5v-131.8h-0.5-3.7c-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3c186.7 0 338.1-151.2 338.3-337.9l0.1-315 0.2-144.2s0.1-3.3 0.1-39.3z"
+              className="dok_68"
+              display="inline"
+              style={{ display: "inline", fill: "#f00" }}
+            />
+            <path
+              id="path194"
+              d="m1670 665c35.7 37.1 57.4 87.5 57.4 143 0 113.8-92.6 206.4-206.4 206.4s-206.4-92.6-206.4-206.4 92.6-206.4 206.4-206.4c19.2 0 37.8 2.6 55.5 7.6l35.3-127.2c-28.9-8-59.3-12.3-90.8-12.3-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3 338.3-151.5 338.3-338.3c0-92.8-37.4-176.9-97.9-238z"
+              className="dok_69"
+              style={{ fill: "#f00" }}
+            />
 
-						<path
-							id="path216"
-							d="m2400 1019.5c-113.8 0-206.4-92.6-206.4-206.4s92.6-206.4 206.4-206.4v-131.9c-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3z"
-							className="dok_75"
-						/>
-					</g>
-					<g id="d_logo">
-						<g clipPath="url(#dcut)">
-							<path
-								id="d"
-								d="m1070.5 247.54c0.2663 55.122 0.5326 110.25 0.3995 212.64-0.1332 102.39-0.6657 252.05-5.1926 340.59-4.5268 88.543-13.048 115.97-29.368 143.47s-40.667 55.322-69.56 77.292c-28.894 21.97-62.445 38.213-94.668 48.732-32.222 10.519-63.111 15.312-96.665 12.383-33.554-2.9292-69.769-13.581-99.917-29.226-30.148-15.646-54.534-36.548-75.305-59.45-20.771-22.902-38.08-47.933-50.862-75.761s-21.037-58.452-23.301-88.011c-2.2634-29.559 1.4648-58.053 10.386-87.345 8.9208-29.292 23.035-59.384 42.341-84.016 19.306-24.632 43.806-43.806 68.305-60.182 24.499-16.377 48.999-29.958 77.092-37.814 28.093-7.8554 59.784-9.9858 91.472-12.116"
-								className="d_copy2"
-								style={{ fill: "none", strokeWidth: "150.4" }}
-							/>
-						</g>
-						<g clipPath="url(#dcut)">
-							<path
-								id="d"
-								d="m1070.5 247.54c0.2663 55.122 0.5326 110.25 0.3995 212.64-0.1332 102.39-0.6657 252.05-5.1926 340.59-4.5268 88.543-13.048 115.97-29.368 143.47s-40.667 55.322-69.56 77.292c-28.894 21.97-62.445 38.213-94.668 48.732-32.222 10.519-63.111 15.312-96.665 12.383-33.554-2.9292-69.769-13.581-99.917-29.226-30.148-15.646-54.534-36.548-75.305-59.45-20.771-22.902-38.08-47.933-50.862-75.761s-21.037-58.452-23.301-88.011c-2.2634-29.559 1.4648-58.053 10.386-87.345 8.9208-29.292 23.035-59.384 42.341-84.016 19.306-24.632 43.806-43.806 68.305-60.182 24.499-16.377 48.999-29.958 77.092-37.814 28.093-7.8554 59.784-9.9858 91.472-12.116"
-								className="d_copy3"
-								style={{ fill: "none", strokeWidth: "150.4" }}
-							/>
-						</g>
-						<g clipPath="url(#dcut)">
-							<path
-								id="d"
-								d="m1070.5 247.54c0.2663 55.122 0.5326 110.25 0.3995 212.64-0.1332 102.39-0.6657 252.05-5.1926 340.59-4.5268 88.543-13.048 115.97-29.368 143.47s-40.667 55.322-69.56 77.292c-28.894 21.97-62.445 38.213-94.668 48.732-32.222 10.519-63.111 15.312-96.665 12.383-33.554-2.9292-69.769-13.581-99.917-29.226-30.148-15.646-54.534-36.548-75.305-59.45-20.771-22.902-38.08-47.933-50.862-75.761s-21.037-58.452-23.301-88.011c-2.2634-29.559 1.4648-58.053 10.386-87.345 8.9208-29.292 23.035-59.384 42.341-84.016 19.306-24.632 43.806-43.806 68.305-60.182 24.499-16.377 48.999-29.958 77.092-37.814 28.093-7.8554 59.784-9.9858 91.472-12.116"
-								className="d_copy4"
-								style={{ fill: "none", strokeWidth: "150.4" }}
-							/>
-						</g>
-						<g clipPath="url(#dcut)">
-							<path
-								id="d"
-								d="m1070.5 247.54c0.2663 55.122 0.5326 110.25 0.3995 212.64-0.1332 102.39-0.6657 252.05-5.1926 340.59-4.5268 88.543-13.048 115.97-29.368 143.47s-40.667 55.322-69.56 77.292c-28.894 21.97-62.445 38.213-94.668 48.732-32.222 10.519-63.111 15.312-96.665 12.383-33.554-2.9292-69.769-13.581-99.917-29.226-30.148-15.646-54.534-36.548-75.305-59.45-20.771-22.902-38.08-47.933-50.862-75.761s-21.037-58.452-23.301-88.011c-2.2634-29.559 1.4648-58.053 10.386-87.345 8.9208-29.292 23.035-59.384 42.341-84.016 19.306-24.632 43.806-43.806 68.305-60.182 24.499-16.377 48.999-29.958 77.092-37.814 28.093-7.8554 59.784-9.9858 91.472-12.116"
-								className="d_copy5"
-								style={{ fill: "none", strokeWidth: "150.4" }}
-							/>
-						</g>
-						<g clipPath="url(#dcut)">
-							<path
-								id="d"
-								d="m1070.5 247.54c0.2663 55.122 0.5326 110.25 0.3995 212.64-0.1332 102.39-0.6657 252.05-5.1926 340.59-4.5268 88.543-13.048 115.97-29.368 143.47s-40.667 55.322-69.56 77.292c-28.894 21.97-62.445 38.213-94.668 48.732-32.222 10.519-63.111 15.312-96.665 12.383-33.554-2.9292-69.769-13.581-99.917-29.226-30.148-15.646-54.534-36.548-75.305-59.45-20.771-22.902-38.08-47.933-50.862-75.761s-21.037-58.452-23.301-88.011c-2.2634-29.559 1.4648-58.053 10.386-87.345 8.9208-29.292 23.035-59.384 42.341-84.016 19.306-24.632 43.806-43.806 68.305-60.182 24.499-16.377 48.999-29.958 77.092-37.814 28.093-7.8554 59.784-9.9858 91.472-12.116"
-								className="d_copy6"
-								style={{ fill: "none", strokeWidth: "150.4" }}
-							/>
-						</g>
-					</g>
-					<g id="o_logo" className="o" clipPath="url(#ocut)">
-						<path
-							d="m1597.8 551.39c-27.961-4.7934-63.911-8.5215-96.932-5.4592-33.021 3.0623-63.111 12.915-91.206 28.227s-54.19 36.082-76.16 62.579c-21.97 26.497-39.811 58.717-51.662 92.537-11.85 33.82-17.709 69.236-17.576 99.461 0.133 30.225 6.2576 55.256 15.578 77.359 9.3206 22.103 21.836 41.276 40.876 62.18 19.04 20.904 44.604 43.539 66.973 61.115 22.369 17.576 41.542 30.091 66.174 37.814s54.724 10.652 86 10.52c31.276-0.1319 63.791-3.3301 91.086-11.452 27.295-8.1221 49.398-21.171 69.503-36.882 20.105-15.711 38.214-34.086 55.256-58.585 17.042-24.498 33.021-55.124 41.542-85.082s9.5863-59.251 7.0565-87.611c-2.5297-28.36-8.6548-55.789-16.644-81.886s-17.842-50.863-28.094-66.973c-10.252-16.11-20.904-23.567-36.616-35.683-15.712-12.117-36.482-28.893-56.854-40.21-20.371-11.318-40.343-17.176-68.304-21.969z"
-							style={{ fill: "none", strokeWidth: 144 }}
-						/>
-						<path
-							d="m1597.8 551.39c-27.961-4.7934-63.911-8.5215-96.932-5.4592-33.021 3.0623-63.111 12.915-91.206 28.227s-54.19 36.082-76.16 62.579c-21.97 26.497-39.811 58.717-51.662 92.537-11.85 33.82-17.709 69.236-17.576 99.461 0.133 30.225 6.2576 55.256 15.578 77.359 9.3206 22.103 21.836 41.276 40.876 62.18 19.04 20.904 44.604 43.539 66.973 61.115 22.369 17.576 41.542 30.091 66.174 37.814s54.724 10.652 86 10.52c31.276-0.1319 63.791-3.3301 91.086-11.452 27.295-8.1221 49.398-21.171 69.503-36.882 20.105-15.711 38.214-34.086 55.256-58.585 17.042-24.498 33.021-55.124 41.542-85.082s9.5863-59.251 7.0565-87.611c-2.5297-28.36-8.6548-55.789-16.644-81.886s-17.842-50.863-28.094-66.973c-10.252-16.11-20.904-23.567-36.616-35.683-15.712-12.117-36.482-28.893-56.854-40.21-20.371-11.318-40.343-17.176-68.304-21.969z"
-							style={{ fill: "none", strokeWidth: 144 }}
-						/>
-						<path
-							d="m1597.8 551.39c-27.961-4.7934-63.911-8.5215-96.932-5.4592-33.021 3.0623-63.111 12.915-91.206 28.227s-54.19 36.082-76.16 62.579c-21.97 26.497-39.811 58.717-51.662 92.537-11.85 33.82-17.709 69.236-17.576 99.461 0.133 30.225 6.2576 55.256 15.578 77.359 9.3206 22.103 21.836 41.276 40.876 62.18 19.04 20.904 44.604 43.539 66.973 61.115 22.369 17.576 41.542 30.091 66.174 37.814s54.724 10.652 86 10.52c31.276-0.1319 63.791-3.3301 91.086-11.452 27.295-8.1221 49.398-21.171 69.503-36.882 20.105-15.711 38.214-34.086 55.256-58.585 17.042-24.498 33.021-55.124 41.542-85.082s9.5863-59.251 7.0565-87.611c-2.5297-28.36-8.6548-55.789-16.644-81.886s-17.842-50.863-28.094-66.973c-10.252-16.11-20.904-23.567-36.616-35.683-15.712-12.117-36.482-28.893-56.854-40.21-20.371-11.318-40.343-17.176-68.304-21.969z"
-							style={{ fill: "none", strokeWidth: 144 }}
-						/>
-						<path
-							d="m1597.8 551.39c-27.961-4.7934-63.911-8.5215-96.932-5.4592-33.021 3.0623-63.111 12.915-91.206 28.227s-54.19 36.082-76.16 62.579c-21.97 26.497-39.811 58.717-51.662 92.537-11.85 33.82-17.709 69.236-17.576 99.461 0.133 30.225 6.2576 55.256 15.578 77.359 9.3206 22.103 21.836 41.276 40.876 62.18 19.04 20.904 44.604 43.539 66.973 61.115 22.369 17.576 41.542 30.091 66.174 37.814s54.724 10.652 86 10.52c31.276-0.1319 63.791-3.3301 91.086-11.452 27.295-8.1221 49.398-21.171 69.503-36.882 20.105-15.711 38.214-34.086 55.256-58.585 17.042-24.498 33.021-55.124 41.542-85.082s9.5863-59.251 7.0565-87.611c-2.5297-28.36-8.6548-55.789-16.644-81.886s-17.842-50.863-28.094-66.973c-10.252-16.11-20.904-23.567-36.616-35.683-15.712-12.117-36.482-28.893-56.854-40.21-20.371-11.318-40.343-17.176-68.304-21.969z"
-							style={{ fill: "none", strokeWidth: 144 }}
-						/>
-						<path
-							d="m1597.8 551.39c-27.961-4.7934-63.911-8.5215-96.932-5.4592-33.021 3.0623-63.111 12.915-91.206 28.227s-54.19 36.082-76.16 62.579c-21.97 26.497-39.811 58.717-51.662 92.537-11.85 33.82-17.709 69.236-17.576 99.461 0.133 30.225 6.2576 55.256 15.578 77.359 9.3206 22.103 21.836 41.276 40.876 62.18 19.04 20.904 44.604 43.539 66.973 61.115 22.369 17.576 41.542 30.091 66.174 37.814s54.724 10.652 86 10.52c31.276-0.1319 63.791-3.3301 91.086-11.452 27.295-8.1221 49.398-21.171 69.503-36.882 20.105-15.711 38.214-34.086 55.256-58.585 17.042-24.498 33.021-55.124 41.542-85.082s9.5863-59.251 7.0565-87.611c-2.5297-28.36-8.6548-55.789-16.644-81.886s-17.842-50.863-28.094-66.973c-10.252-16.11-20.904-23.567-36.616-35.683-15.712-12.117-36.482-28.893-56.854-40.21-20.371-11.318-40.343-17.176-68.304-21.969z"
-							style={{ fill: "none", strokeWidth: 144 }}
-						/>
-						<path
-							d="m1597.8 551.39c-27.961-4.7934-63.911-8.5215-96.932-5.4592-33.021 3.0623-63.111 12.915-91.206 28.227s-54.19 36.082-76.16 62.579c-21.97 26.497-39.811 58.717-51.662 92.537-11.85 33.82-17.709 69.236-17.576 99.461 0.133 30.225 6.2576 55.256 15.578 77.359 9.3206 22.103 21.836 41.276 40.876 62.18 19.04 20.904 44.604 43.539 66.973 61.115 22.369 17.576 41.542 30.091 66.174 37.814s54.724 10.652 86 10.52c31.276-0.1319 63.791-3.3301 91.086-11.452 27.295-8.1221 49.398-21.171 69.503-36.882 20.105-15.711 38.214-34.086 55.256-58.585 17.042-24.498 33.021-55.124 41.542-85.082s9.5863-59.251 7.0565-87.611c-2.5297-28.36-8.6548-55.789-16.644-81.886s-17.842-50.863-28.094-66.973c-10.252-16.11-20.904-23.567-36.616-35.683-15.712-12.117-36.482-28.893-56.854-40.21-20.371-11.318-40.343-17.176-68.304-21.969z"
-							style={{ fill: "none", strokeWidth: 144 }}
-						/>
-					</g>
-					<g id="kl_logo" className="kl" clipPath="url(#klcut)">
-						<path
-							d="m1991.6 245.95c0.7989 302.51 1.5978 605.02 2.3967 907.53"
-							style={{ fill: "none", strokeWidth: "141.7" }}
-						/>
-						<path
-							d="m1991.6 245.95c0.7989 302.51 1.5978 605.02 2.3967 907.53"
-							style={{ fill: "none", strokeWidth: "141.7" }}
-						/>
-						<path
-							d="m1991.6 245.95c0.7989 302.51 1.5978 605.02 2.3967 907.53"
-							style={{ fill: "none", strokeWidth: "141.7" }}
-						/>
-						<path
-							d="m1991.6 245.95c0.7989 302.51 1.5978 605.02 2.3967 907.53"
-							style={{ fill: "none", strokeWidth: "141.7" }}
-						/>
-						<path
-							d="m1991.6 245.95c0.7989 302.51 1.5978 605.02 2.3967 907.53"
-							style={{ fill: "none", strokeWidth: "141.7" }}
-						/>
-						<path
-							d="m1991.6 245.95c0.7989 302.51 1.5978 605.02 2.3967 907.53"
-							style={{ fill: "none", strokeWidth: "141.7" }}
-						/>
-					</g>
-					<g id="kc_logo" className="kc" clipPath="url(#kccut)">
-						<path
-							d="m2407 549.52c-27.161 0.79886-54.323 1.5977-81.086 7.19-26.763 5.5922-53.125 15.977-77.359 31.955-24.233 15.978-46.335 37.547-63.645 61.248s-29.825 49.53-39.279 78.158c-9.4538 28.627-15.845 60.049-15.445 90.807s7.5891 60.848 16.377 85.214 19.173 43.007 32.089 59.517c12.916 16.511 28.36 30.89 47.8 46.202 19.44 15.312 42.874 31.556 64.701 42.374s41.551 16.078 60.458 18.874c18.907 2.796 36.749 3.0623 54.59 3.3285"
-							style={{ fill: "none", strokeWidth: "148.8" }}
-						/>
-						<path
-							d="m2407 549.52c-27.161 0.79886-54.323 1.5977-81.086 7.19-26.763 5.5922-53.125 15.977-77.359 31.955-24.233 15.978-46.335 37.547-63.645 61.248s-29.825 49.53-39.279 78.158c-9.4538 28.627-15.845 60.049-15.445 90.807s7.5891 60.848 16.377 85.214 19.173 43.007 32.089 59.517c12.916 16.511 28.36 30.89 47.8 46.202 19.44 15.312 42.874 31.556 64.701 42.374s41.551 16.078 60.458 18.874c18.907 2.796 36.749 3.0623 54.59 3.3285"
-							style={{ fill: "none", strokeWidth: "148.8" }}
-						/>
-						<path
-							d="m2407 549.52c-27.161 0.79886-54.323 1.5977-81.086 7.19-26.763 5.5922-53.125 15.977-77.359 31.955-24.233 15.978-46.335 37.547-63.645 61.248s-29.825 49.53-39.279 78.158c-9.4538 28.627-15.845 60.049-15.445 90.807s7.5891 60.848 16.377 85.214 19.173 43.007 32.089 59.517c12.916 16.511 28.36 30.89 47.8 46.202 19.44 15.312 42.874 31.556 64.701 42.374s41.551 16.078 60.458 18.874c18.907 2.796 36.749 3.0623 54.59 3.3285"
-							style={{ fill: "none", strokeWidth: "148.8" }}
-						/>
-						<path
-							d="m2407 549.52c-27.161 0.79886-54.323 1.5977-81.086 7.19-26.763 5.5922-53.125 15.977-77.359 31.955-24.233 15.978-46.335 37.547-63.645 61.248s-29.825 49.53-39.279 78.158c-9.4538 28.627-15.845 60.049-15.445 90.807s7.5891 60.848 16.377 85.214 19.173 43.007 32.089 59.517c12.916 16.511 28.36 30.89 47.8 46.202 19.44 15.312 42.874 31.556 64.701 42.374s41.551 16.078 60.458 18.874c18.907 2.796 36.749 3.0623 54.59 3.3285"
-							style={{ fill: "none", strokeWidth: "148.8" }}
-						/>
-						<path
-							d="m2407 549.52c-27.161 0.79886-54.323 1.5977-81.086 7.19-26.763 5.5922-53.125 15.977-77.359 31.955-24.233 15.978-46.335 37.547-63.645 61.248s-29.825 49.53-39.279 78.158c-9.4538 28.627-15.845 60.049-15.445 90.807s7.5891 60.848 16.377 85.214 19.173 43.007 32.089 59.517c12.916 16.511 28.36 30.89 47.8 46.202 19.44 15.312 42.874 31.556 64.701 42.374s41.551 16.078 60.458 18.874c18.907 2.796 36.749 3.0623 54.59 3.3285"
-							style={{ fill: "none", strokeWidth: "148.8" }}
-						/>
-						<path
-							d="m2407 549.52c-27.161 0.79886-54.323 1.5977-81.086 7.19-26.763 5.5922-53.125 15.977-77.359 31.955-24.233 15.978-46.335 37.547-63.645 61.248s-29.825 49.53-39.279 78.158c-9.4538 28.627-15.845 60.049-15.445 90.807s7.5891 60.848 16.377 85.214 19.173 43.007 32.089 59.517c12.916 16.511 28.36 30.89 47.8 46.202 19.44 15.312 42.874 31.556 64.701 42.374s41.551 16.078 60.458 18.874c18.907 2.796 36.749 3.0623 54.59 3.3285"
-							style={{ fill: "none", strokeWidth: "148.8" }}
-						/>
-					</g>
+            <path
+              id="path198"
+              d="m2048 245c0.2 302.1-0.2 602.9 0 905h-132v-838.6c16.2-11.2 34.7-22.7 55.5-33.9 27.1-14.6 76.5-32.6 76.5-32.5z"
+              className="dok_70"
+              style={{ fill: "#f00" }}
+            />
 
-					<path
-						opacity="0"
-						id="studio"
-						transform="translate(550 -50)"
-						fill="hsl(338, 96%,10%)"
-						d="M156.4 1213.4c0-11.1 2.1-21.6 6.4-31.4 4.3-9.8 10-18.3 17.4-25.6 7.3-7.3 15.9-13.1 25.6-17.4 9.8-4.3 20.2-6.4 31.4-6.4h123.6v53.9H237.1c-3.8 0-7.3.7-10.5 2.1-3.3 1.4-6.1 3.3-8.5 5.7-2.4 2.4-4.4 5.3-5.7 8.5-1.4 3.3-2.1 6.8-2.1 10.5s.7 7.3 2.1 10.6c1.4 3.3 3.3 6.2 5.7 8.6 2.4 2.4 5.3 4.4 8.5 5.7 3.3 1.4 6.8 2.1 10.5 2.1H291c11.1 0 21.6 2.1 31.5 6.3 9.8 4.2 18.4 10 25.7 17.3 7.3 7.3 13.1 15.9 17.3 25.7 4.2 9.8 6.3 20.3 6.3 31.5 0 11.1-2.1 21.6-6.3 31.4-4.2 9.8-10 18.3-17.3 25.6s-15.9 13.1-25.7 17.4c-9.8 4.3-20.3 6.4-31.5 6.4H171.4V1348H291c3.8 0 7.3-.7 10.5-2.1 3.3-1.4 6.1-3.3 8.5-5.7 2.4-2.4 4.3-5.3 5.7-8.5 1.4-3.3 2.1-6.8 2.1-10.5s-.7-7.3-2.1-10.5c-1.4-3.3-3.3-6.1-5.7-8.5-2.4-2.4-5.3-4.3-8.5-5.7-3.3-1.4-6.8-2.1-10.5-2.1h-53.9c-11.1 0-21.6-2.1-31.4-6.4-9.8-4.3-18.3-10-25.6-17.4s-13.1-15.9-17.4-25.7c-4.2-9.9-6.3-20.4-6.3-31.5zm405.4 188.5h-53.7v-215.4h-80.9v-53.9h215.4v53.9h-80.7v215.4zm367-107.6c0 14.9-2.8 28.9-8.4 42-5.6 13.1-13.3 24.5-23.1 34.2-9.8 9.7-21.2 17.4-34.3 23-13.1 5.6-27.1 8.4-42 8.4-14.9 0-28.9-2.8-42-8.4-13.1-5.6-24.5-13.3-34.2-23-9.7-9.7-17.4-21.1-23-34.2-5.6-13.1-8.5-27.1-8.5-42v-161.7H767v161.7c0 7.4 1.4 14.3 4.2 20.8 2.8 6.5 6.7 12.2 11.5 17.1 4.9 4.9 10.6 8.7 17.2 11.5 6.6 2.8 13.5 4.2 20.9 4.2 7.4 0 14.4-1.4 20.9-4.2 6.6-2.8 12.3-6.7 17.2-11.5 4.9-4.9 8.7-10.6 11.5-17.1 2.8-6.5 4.2-13.5 4.2-20.8v-161.7h53.9v161.7zm307.9-27c0 12.4-1.6 24.3-4.8 35.8-3.2 11.5-7.7 22.2-13.6 32.1-5.9 10-12.9 19-21 27.2s-17.2 15.2-27.2 21.1c-10 5.9-20.7 10.4-32.2 13.6-11.5 3.2-23.4 4.8-35.8 4.8H1021v-269.3h81.1c12.4 0 24.3 1.6 35.8 4.8 11.5 3.2 22.2 7.7 32.2 13.6 10 5.9 19.1 12.9 27.2 21.1 8.1 8.2 15.1 17.3 21 27.2 5.9 10 10.4 20.7 13.6 32.1 3.2 11.6 4.8 23.5 4.8 35.9zm-53.9 0c0-11.1-2.1-21.6-6.3-31.4-4.2-9.8-10-18.3-17.3-25.6-7.3-7.3-15.9-13.1-25.7-17.4-9.8-4.3-20.3-6.4-31.5-6.4h-26.9V1348h26.9c11.1 0 21.6-2.1 31.5-6.3 9.8-4.2 18.4-10 25.7-17.3 7.3-7.3 13.1-15.9 17.3-25.7 4.2-9.8 6.3-20.3 6.3-31.4zm188.9 134.6h-53.9v-269.3h53.9v269.3zm359.1-133.5c0 12.8-1.7 25.1-5 36.9-3.3 11.8-8 22.9-14 33.2-6 10.3-13.3 19.7-21.8 28.3-8.5 8.5-17.9 15.8-28.2 21.9-10.3 6.1-21.3 10.8-33.2 14.1-11.9 3.3-24.2 5-37 5s-25.1-1.7-36.9-5c-11.8-3.3-22.9-8-33.2-14.1-10.3-6.1-19.7-13.4-28.3-21.9-8.5-8.5-15.8-17.9-21.9-28.3-6.1-10.3-10.8-21.4-14.1-33.2-3.3-11.8-5-24.1-5-36.9 0-12.8 1.7-25.1 5-37 3.3-11.9 8-23 14.1-33.2 6.1-10.3 13.4-19.7 21.9-28.2 8.5-8.5 17.9-15.8 28.3-21.8 10.3-6 21.4-10.7 33.2-14 11.8-3.3 24.1-5 36.9-5 12.8 0 25.1 1.7 37 5 11.9 3.3 23 8 33.2 14 10.3 6 19.7 13.3 28.2 21.8s15.8 17.9 21.8 28.2 10.7 21.3 14 33.2c3.4 11.9 5 24.2 5 37zm-53.5 0c0-11.8-2.3-22.9-6.8-33.3-4.5-10.5-10.6-19.5-18.3-27.2-7.7-7.7-16.8-13.8-27.2-18.3-10.5-4.5-21.6-6.8-33.3-6.8-11.9 0-23 2.3-33.4 6.8-10.4 4.5-19.5 10.6-27.2 18.3-7.8 7.7-13.9 16.8-18.4 27.2-4.5 10.5-6.8 21.6-6.8 33.3 0 11.8 2.3 22.8 6.8 33.1s10.6 19.4 18.4 27.1c7.8 7.8 16.8 13.9 27.2 18.4 10.4 4.5 21.5 6.8 33.4 6.8 11.8 0 22.9-2.3 33.3-6.8 10.5-4.5 19.5-10.6 27.2-18.4 7.7-7.8 13.8-16.8 18.3-27.1s6.8-21.3 6.8-33.1z"
-					/>
-				</svg>
-			</>
-		);
-	}
+            <path
+              id="path202"
+              d="m2388 1019.5c-113.8 0-206.4-92.6-206.4-206.4s92.6-206.4 206.4-206.4v-131.9c-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3z"
+              className="dok_71"
+              style={{ fill: "#f00" }}
+            />
+
+            <path
+              id="path206"
+              d="m1139 314c-46-35-132-68-132-68v143l-0.5 430.6c-4 110.3-95 198.8-206.2 198.8-113.8 0-206.4-92.6-206.4-206.4s92.6-206.4 206.4-206.4h3.7 0.5v-131.8h-0.5-3.7c-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3c186.7 0 338.1-151.2 338.3-337.9l0.1-315 0.2-144.2s0.1-3.3 0.1-39.3z"
+              className="dok_72"
+              display="inline"
+              style={{ display: "inline" }}
+            />
+            <path
+              id="path208"
+              d="m1682 665c35.7 37.1 57.4 87.5 57.4 143 0 113.8-92.6 206.4-206.4 206.4s-206.4-92.6-206.4-206.4 92.6-206.4 206.4-206.4c19.2 0 37.8 2.6 55.5 7.6l35.3-127.2c-28.9-8-59.3-12.3-90.8-12.3-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3 338.3-151.5 338.3-338.3c0-92.8-37.4-176.9-97.9-238z"
+              className="dok_73"
+            />
+
+            <path
+              id="path212"
+              d="m2060 245c0.2 302.1-0.2 602.9 0 905h-132v-838.6c16.2-11.2 34.7-22.7 55.5-33.9 27.1-14.6 76.5-32.6 76.5-32.5z"
+              className="dok_74"
+            />
+
+            <path
+              id="path216"
+              d="m2400 1019.5c-113.8 0-206.4-92.6-206.4-206.4s92.6-206.4 206.4-206.4v-131.9c-186.8 0-338.3 151.5-338.3 338.3s151.5 338.3 338.3 338.3z"
+              className="dok_75"
+            />
+          </g>
+		<g id="logodok">
+		  <g id="d_logo">
+            <g clipPath="url(#dcut)">
+              <path
+                id="d"
+                d="m1070.5 247.54c0.2663 55.122 0.5326 110.25 0.3995 212.64-0.1332 102.39-0.6657 252.05-5.1926 340.59-4.5268 88.543-13.048 115.97-29.368 143.47s-40.667 55.322-69.56 77.292c-28.894 21.97-62.445 38.213-94.668 48.732-32.222 10.519-63.111 15.312-96.665 12.383-33.554-2.9292-69.769-13.581-99.917-29.226-30.148-15.646-54.534-36.548-75.305-59.45-20.771-22.902-38.08-47.933-50.862-75.761s-21.037-58.452-23.301-88.011c-2.2634-29.559 1.4648-58.053 10.386-87.345 8.9208-29.292 23.035-59.384 42.341-84.016 19.306-24.632 43.806-43.806 68.305-60.182 24.499-16.377 48.999-29.958 77.092-37.814 28.093-7.8554 59.784-9.9858 91.472-12.116"
+                className="d_copy2"
+                style={{ fill: "none", strokeWidth: "150.4" }}
+              />
+            </g>
+            <g clipPath="url(#dcut)">
+              <path
+                id="d"
+                d="m1070.5 247.54c0.2663 55.122 0.5326 110.25 0.3995 212.64-0.1332 102.39-0.6657 252.05-5.1926 340.59-4.5268 88.543-13.048 115.97-29.368 143.47s-40.667 55.322-69.56 77.292c-28.894 21.97-62.445 38.213-94.668 48.732-32.222 10.519-63.111 15.312-96.665 12.383-33.554-2.9292-69.769-13.581-99.917-29.226-30.148-15.646-54.534-36.548-75.305-59.45-20.771-22.902-38.08-47.933-50.862-75.761s-21.037-58.452-23.301-88.011c-2.2634-29.559 1.4648-58.053 10.386-87.345 8.9208-29.292 23.035-59.384 42.341-84.016 19.306-24.632 43.806-43.806 68.305-60.182 24.499-16.377 48.999-29.958 77.092-37.814 28.093-7.8554 59.784-9.9858 91.472-12.116"
+                className="d_copy3"
+                style={{ fill: "none", strokeWidth: "150.4" }}
+              />
+            </g>
+            <g clipPath="url(#dcut)">
+              <path
+                id="d"
+                d="m1070.5 247.54c0.2663 55.122 0.5326 110.25 0.3995 212.64-0.1332 102.39-0.6657 252.05-5.1926 340.59-4.5268 88.543-13.048 115.97-29.368 143.47s-40.667 55.322-69.56 77.292c-28.894 21.97-62.445 38.213-94.668 48.732-32.222 10.519-63.111 15.312-96.665 12.383-33.554-2.9292-69.769-13.581-99.917-29.226-30.148-15.646-54.534-36.548-75.305-59.45-20.771-22.902-38.08-47.933-50.862-75.761s-21.037-58.452-23.301-88.011c-2.2634-29.559 1.4648-58.053 10.386-87.345 8.9208-29.292 23.035-59.384 42.341-84.016 19.306-24.632 43.806-43.806 68.305-60.182 24.499-16.377 48.999-29.958 77.092-37.814 28.093-7.8554 59.784-9.9858 91.472-12.116"
+                className="d_copy4"
+                style={{ fill: "none", strokeWidth: "150.4" }}
+              />
+            </g>
+            <g clipPath="url(#dcut)">
+              <path
+                id="d"
+                d="m1070.5 247.54c0.2663 55.122 0.5326 110.25 0.3995 212.64-0.1332 102.39-0.6657 252.05-5.1926 340.59-4.5268 88.543-13.048 115.97-29.368 143.47s-40.667 55.322-69.56 77.292c-28.894 21.97-62.445 38.213-94.668 48.732-32.222 10.519-63.111 15.312-96.665 12.383-33.554-2.9292-69.769-13.581-99.917-29.226-30.148-15.646-54.534-36.548-75.305-59.45-20.771-22.902-38.08-47.933-50.862-75.761s-21.037-58.452-23.301-88.011c-2.2634-29.559 1.4648-58.053 10.386-87.345 8.9208-29.292 23.035-59.384 42.341-84.016 19.306-24.632 43.806-43.806 68.305-60.182 24.499-16.377 48.999-29.958 77.092-37.814 28.093-7.8554 59.784-9.9858 91.472-12.116"
+                className="d_copy5"
+                style={{ fill: "none", strokeWidth: "150.4" }}
+              />
+            </g>
+            <g clipPath="url(#dcut)">
+              <path
+                id="d"
+                d="m1070.5 247.54c0.2663 55.122 0.5326 110.25 0.3995 212.64-0.1332 102.39-0.6657 252.05-5.1926 340.59-4.5268 88.543-13.048 115.97-29.368 143.47s-40.667 55.322-69.56 77.292c-28.894 21.97-62.445 38.213-94.668 48.732-32.222 10.519-63.111 15.312-96.665 12.383-33.554-2.9292-69.769-13.581-99.917-29.226-30.148-15.646-54.534-36.548-75.305-59.45-20.771-22.902-38.08-47.933-50.862-75.761s-21.037-58.452-23.301-88.011c-2.2634-29.559 1.4648-58.053 10.386-87.345 8.9208-29.292 23.035-59.384 42.341-84.016 19.306-24.632 43.806-43.806 68.305-60.182 24.499-16.377 48.999-29.958 77.092-37.814 28.093-7.8554 59.784-9.9858 91.472-12.116"
+                className="d_copy6"
+                style={{ fill: "none", strokeWidth: "150.4" }}
+              />
+            </g>
+          </g>
+          <g id="o_logo" className="o" clipPath="url(#ocut)">
+            <path
+              d="m1597.8 551.39c-27.961-4.7934-63.911-8.5215-96.932-5.4592-33.021 3.0623-63.111 12.915-91.206 28.227s-54.19 36.082-76.16 62.579c-21.97 26.497-39.811 58.717-51.662 92.537-11.85 33.82-17.709 69.236-17.576 99.461 0.133 30.225 6.2576 55.256 15.578 77.359 9.3206 22.103 21.836 41.276 40.876 62.18 19.04 20.904 44.604 43.539 66.973 61.115 22.369 17.576 41.542 30.091 66.174 37.814s54.724 10.652 86 10.52c31.276-0.1319 63.791-3.3301 91.086-11.452 27.295-8.1221 49.398-21.171 69.503-36.882 20.105-15.711 38.214-34.086 55.256-58.585 17.042-24.498 33.021-55.124 41.542-85.082s9.5863-59.251 7.0565-87.611c-2.5297-28.36-8.6548-55.789-16.644-81.886s-17.842-50.863-28.094-66.973c-10.252-16.11-20.904-23.567-36.616-35.683-15.712-12.117-36.482-28.893-56.854-40.21-20.371-11.318-40.343-17.176-68.304-21.969z"
+              style={{ fill: "none", strokeWidth: 144 }}
+            />
+            <path
+              d="m1597.8 551.39c-27.961-4.7934-63.911-8.5215-96.932-5.4592-33.021 3.0623-63.111 12.915-91.206 28.227s-54.19 36.082-76.16 62.579c-21.97 26.497-39.811 58.717-51.662 92.537-11.85 33.82-17.709 69.236-17.576 99.461 0.133 30.225 6.2576 55.256 15.578 77.359 9.3206 22.103 21.836 41.276 40.876 62.18 19.04 20.904 44.604 43.539 66.973 61.115 22.369 17.576 41.542 30.091 66.174 37.814s54.724 10.652 86 10.52c31.276-0.1319 63.791-3.3301 91.086-11.452 27.295-8.1221 49.398-21.171 69.503-36.882 20.105-15.711 38.214-34.086 55.256-58.585 17.042-24.498 33.021-55.124 41.542-85.082s9.5863-59.251 7.0565-87.611c-2.5297-28.36-8.6548-55.789-16.644-81.886s-17.842-50.863-28.094-66.973c-10.252-16.11-20.904-23.567-36.616-35.683-15.712-12.117-36.482-28.893-56.854-40.21-20.371-11.318-40.343-17.176-68.304-21.969z"
+              style={{ fill: "none", strokeWidth: 144 }}
+            />
+            <path
+              d="m1597.8 551.39c-27.961-4.7934-63.911-8.5215-96.932-5.4592-33.021 3.0623-63.111 12.915-91.206 28.227s-54.19 36.082-76.16 62.579c-21.97 26.497-39.811 58.717-51.662 92.537-11.85 33.82-17.709 69.236-17.576 99.461 0.133 30.225 6.2576 55.256 15.578 77.359 9.3206 22.103 21.836 41.276 40.876 62.18 19.04 20.904 44.604 43.539 66.973 61.115 22.369 17.576 41.542 30.091 66.174 37.814s54.724 10.652 86 10.52c31.276-0.1319 63.791-3.3301 91.086-11.452 27.295-8.1221 49.398-21.171 69.503-36.882 20.105-15.711 38.214-34.086 55.256-58.585 17.042-24.498 33.021-55.124 41.542-85.082s9.5863-59.251 7.0565-87.611c-2.5297-28.36-8.6548-55.789-16.644-81.886s-17.842-50.863-28.094-66.973c-10.252-16.11-20.904-23.567-36.616-35.683-15.712-12.117-36.482-28.893-56.854-40.21-20.371-11.318-40.343-17.176-68.304-21.969z"
+              style={{ fill: "none", strokeWidth: 144 }}
+            />
+            <path
+              d="m1597.8 551.39c-27.961-4.7934-63.911-8.5215-96.932-5.4592-33.021 3.0623-63.111 12.915-91.206 28.227s-54.19 36.082-76.16 62.579c-21.97 26.497-39.811 58.717-51.662 92.537-11.85 33.82-17.709 69.236-17.576 99.461 0.133 30.225 6.2576 55.256 15.578 77.359 9.3206 22.103 21.836 41.276 40.876 62.18 19.04 20.904 44.604 43.539 66.973 61.115 22.369 17.576 41.542 30.091 66.174 37.814s54.724 10.652 86 10.52c31.276-0.1319 63.791-3.3301 91.086-11.452 27.295-8.1221 49.398-21.171 69.503-36.882 20.105-15.711 38.214-34.086 55.256-58.585 17.042-24.498 33.021-55.124 41.542-85.082s9.5863-59.251 7.0565-87.611c-2.5297-28.36-8.6548-55.789-16.644-81.886s-17.842-50.863-28.094-66.973c-10.252-16.11-20.904-23.567-36.616-35.683-15.712-12.117-36.482-28.893-56.854-40.21-20.371-11.318-40.343-17.176-68.304-21.969z"
+              style={{ fill: "none", strokeWidth: 144 }}
+            />
+            <path
+              d="m1597.8 551.39c-27.961-4.7934-63.911-8.5215-96.932-5.4592-33.021 3.0623-63.111 12.915-91.206 28.227s-54.19 36.082-76.16 62.579c-21.97 26.497-39.811 58.717-51.662 92.537-11.85 33.82-17.709 69.236-17.576 99.461 0.133 30.225 6.2576 55.256 15.578 77.359 9.3206 22.103 21.836 41.276 40.876 62.18 19.04 20.904 44.604 43.539 66.973 61.115 22.369 17.576 41.542 30.091 66.174 37.814s54.724 10.652 86 10.52c31.276-0.1319 63.791-3.3301 91.086-11.452 27.295-8.1221 49.398-21.171 69.503-36.882 20.105-15.711 38.214-34.086 55.256-58.585 17.042-24.498 33.021-55.124 41.542-85.082s9.5863-59.251 7.0565-87.611c-2.5297-28.36-8.6548-55.789-16.644-81.886s-17.842-50.863-28.094-66.973c-10.252-16.11-20.904-23.567-36.616-35.683-15.712-12.117-36.482-28.893-56.854-40.21-20.371-11.318-40.343-17.176-68.304-21.969z"
+              style={{ fill: "none", strokeWidth: 144 }}
+            />
+            <path
+              d="m1597.8 551.39c-27.961-4.7934-63.911-8.5215-96.932-5.4592-33.021 3.0623-63.111 12.915-91.206 28.227s-54.19 36.082-76.16 62.579c-21.97 26.497-39.811 58.717-51.662 92.537-11.85 33.82-17.709 69.236-17.576 99.461 0.133 30.225 6.2576 55.256 15.578 77.359 9.3206 22.103 21.836 41.276 40.876 62.18 19.04 20.904 44.604 43.539 66.973 61.115 22.369 17.576 41.542 30.091 66.174 37.814s54.724 10.652 86 10.52c31.276-0.1319 63.791-3.3301 91.086-11.452 27.295-8.1221 49.398-21.171 69.503-36.882 20.105-15.711 38.214-34.086 55.256-58.585 17.042-24.498 33.021-55.124 41.542-85.082s9.5863-59.251 7.0565-87.611c-2.5297-28.36-8.6548-55.789-16.644-81.886s-17.842-50.863-28.094-66.973c-10.252-16.11-20.904-23.567-36.616-35.683-15.712-12.117-36.482-28.893-56.854-40.21-20.371-11.318-40.343-17.176-68.304-21.969z"
+              style={{ fill: "none", strokeWidth: 144 }}
+            />
+          </g>
+          <g>
+		  <g id="kl_logo" className="kl" clipPath="url(#klcut)">
+            <path
+              d="m1991.6 245.95c0.7989 302.51 1.5978 605.02 2.3967 907.53"
+              style={{ fill: "none", strokeWidth: "141.7" }}
+            />
+            <path
+              d="m1991.6 245.95c0.7989 302.51 1.5978 605.02 2.3967 907.53"
+              style={{ fill: "none", strokeWidth: "141.7" }}
+            />
+            <path
+              d="m1991.6 245.95c0.7989 302.51 1.5978 605.02 2.3967 907.53"
+              style={{ fill: "none", strokeWidth: "141.7" }}
+            />
+            <path
+              d="m1991.6 245.95c0.7989 302.51 1.5978 605.02 2.3967 907.53"
+              style={{ fill: "none", strokeWidth: "141.7" }}
+            />
+            <path
+              d="m1991.6 245.95c0.7989 302.51 1.5978 605.02 2.3967 907.53"
+              style={{ fill: "none", strokeWidth: "141.7" }}
+            />
+            <path
+              d="m1991.6 245.95c0.7989 302.51 1.5978 605.02 2.3967 907.53"
+              style={{ fill: "none", strokeWidth: "141.7" }}
+            />
+          </g>
+          <g id="kc_logo" className="kc" clipPath="url(#kccut)">
+            <path
+              d="m2407 549.52c-27.161 0.79886-54.323 1.5977-81.086 7.19-26.763 5.5922-53.125 15.977-77.359 31.955-24.233 15.978-46.335 37.547-63.645 61.248s-29.825 49.53-39.279 78.158c-9.4538 28.627-15.845 60.049-15.445 90.807s7.5891 60.848 16.377 85.214 19.173 43.007 32.089 59.517c12.916 16.511 28.36 30.89 47.8 46.202 19.44 15.312 42.874 31.556 64.701 42.374s41.551 16.078 60.458 18.874c18.907 2.796 36.749 3.0623 54.59 3.3285"
+              style={{ fill: "none", strokeWidth: "148.8" }}
+            />
+            <path
+              d="m2407 549.52c-27.161 0.79886-54.323 1.5977-81.086 7.19-26.763 5.5922-53.125 15.977-77.359 31.955-24.233 15.978-46.335 37.547-63.645 61.248s-29.825 49.53-39.279 78.158c-9.4538 28.627-15.845 60.049-15.445 90.807s7.5891 60.848 16.377 85.214 19.173 43.007 32.089 59.517c12.916 16.511 28.36 30.89 47.8 46.202 19.44 15.312 42.874 31.556 64.701 42.374s41.551 16.078 60.458 18.874c18.907 2.796 36.749 3.0623 54.59 3.3285"
+              style={{ fill: "none", strokeWidth: "148.8" }}
+            />
+            <path
+              d="m2407 549.52c-27.161 0.79886-54.323 1.5977-81.086 7.19-26.763 5.5922-53.125 15.977-77.359 31.955-24.233 15.978-46.335 37.547-63.645 61.248s-29.825 49.53-39.279 78.158c-9.4538 28.627-15.845 60.049-15.445 90.807s7.5891 60.848 16.377 85.214 19.173 43.007 32.089 59.517c12.916 16.511 28.36 30.89 47.8 46.202 19.44 15.312 42.874 31.556 64.701 42.374s41.551 16.078 60.458 18.874c18.907 2.796 36.749 3.0623 54.59 3.3285"
+              style={{ fill: "none", strokeWidth: "148.8" }}
+            />
+            <path
+              d="m2407 549.52c-27.161 0.79886-54.323 1.5977-81.086 7.19-26.763 5.5922-53.125 15.977-77.359 31.955-24.233 15.978-46.335 37.547-63.645 61.248s-29.825 49.53-39.279 78.158c-9.4538 28.627-15.845 60.049-15.445 90.807s7.5891 60.848 16.377 85.214 19.173 43.007 32.089 59.517c12.916 16.511 28.36 30.89 47.8 46.202 19.44 15.312 42.874 31.556 64.701 42.374s41.551 16.078 60.458 18.874c18.907 2.796 36.749 3.0623 54.59 3.3285"
+              style={{ fill: "none", strokeWidth: "148.8" }}
+            />
+            <path
+              d="m2407 549.52c-27.161 0.79886-54.323 1.5977-81.086 7.19-26.763 5.5922-53.125 15.977-77.359 31.955-24.233 15.978-46.335 37.547-63.645 61.248s-29.825 49.53-39.279 78.158c-9.4538 28.627-15.845 60.049-15.445 90.807s7.5891 60.848 16.377 85.214 19.173 43.007 32.089 59.517c12.916 16.511 28.36 30.89 47.8 46.202 19.44 15.312 42.874 31.556 64.701 42.374s41.551 16.078 60.458 18.874c18.907 2.796 36.749 3.0623 54.59 3.3285"
+              style={{ fill: "none", strokeWidth: "148.8" }}
+            />
+            <path
+              d="m2407 549.52c-27.161 0.79886-54.323 1.5977-81.086 7.19-26.763 5.5922-53.125 15.977-77.359 31.955-24.233 15.978-46.335 37.547-63.645 61.248s-29.825 49.53-39.279 78.158c-9.4538 28.627-15.845 60.049-15.445 90.807s7.5891 60.848 16.377 85.214 19.173 43.007 32.089 59.517c12.916 16.511 28.36 30.89 47.8 46.202 19.44 15.312 42.874 31.556 64.701 42.374s41.551 16.078 60.458 18.874c18.907 2.796 36.749 3.0623 54.59 3.3285"
+              style={{ fill: "none", strokeWidth: "148.8" }}
+            />
+          </g>
+		  </g>
+		</g>
+          <path
+            id="studio"
+            transform="translate(550 -50)"
+            fill="hsl(338, 96%,10%)"
+            d="M156.4 1213.4c0-11.1 2.1-21.6 6.4-31.4 4.3-9.8 10-18.3 17.4-25.6 7.3-7.3 15.9-13.1 25.6-17.4 9.8-4.3 20.2-6.4 31.4-6.4h123.6v53.9H237.1c-3.8 0-7.3.7-10.5 2.1-3.3 1.4-6.1 3.3-8.5 5.7-2.4 2.4-4.4 5.3-5.7 8.5-1.4 3.3-2.1 6.8-2.1 10.5s.7 7.3 2.1 10.6c1.4 3.3 3.3 6.2 5.7 8.6 2.4 2.4 5.3 4.4 8.5 5.7 3.3 1.4 6.8 2.1 10.5 2.1H291c11.1 0 21.6 2.1 31.5 6.3 9.8 4.2 18.4 10 25.7 17.3 7.3 7.3 13.1 15.9 17.3 25.7 4.2 9.8 6.3 20.3 6.3 31.5 0 11.1-2.1 21.6-6.3 31.4-4.2 9.8-10 18.3-17.3 25.6s-15.9 13.1-25.7 17.4c-9.8 4.3-20.3 6.4-31.5 6.4H171.4V1348H291c3.8 0 7.3-.7 10.5-2.1 3.3-1.4 6.1-3.3 8.5-5.7 2.4-2.4 4.3-5.3 5.7-8.5 1.4-3.3 2.1-6.8 2.1-10.5s-.7-7.3-2.1-10.5c-1.4-3.3-3.3-6.1-5.7-8.5-2.4-2.4-5.3-4.3-8.5-5.7-3.3-1.4-6.8-2.1-10.5-2.1h-53.9c-11.1 0-21.6-2.1-31.4-6.4-9.8-4.3-18.3-10-25.6-17.4s-13.1-15.9-17.4-25.7c-4.2-9.9-6.3-20.4-6.3-31.5zm405.4 188.5h-53.7v-215.4h-80.9v-53.9h215.4v53.9h-80.7v215.4zm367-107.6c0 14.9-2.8 28.9-8.4 42-5.6 13.1-13.3 24.5-23.1 34.2-9.8 9.7-21.2 17.4-34.3 23-13.1 5.6-27.1 8.4-42 8.4-14.9 0-28.9-2.8-42-8.4-13.1-5.6-24.5-13.3-34.2-23-9.7-9.7-17.4-21.1-23-34.2-5.6-13.1-8.5-27.1-8.5-42v-161.7H767v161.7c0 7.4 1.4 14.3 4.2 20.8 2.8 6.5 6.7 12.2 11.5 17.1 4.9 4.9 10.6 8.7 17.2 11.5 6.6 2.8 13.5 4.2 20.9 4.2 7.4 0 14.4-1.4 20.9-4.2 6.6-2.8 12.3-6.7 17.2-11.5 4.9-4.9 8.7-10.6 11.5-17.1 2.8-6.5 4.2-13.5 4.2-20.8v-161.7h53.9v161.7zm307.9-27c0 12.4-1.6 24.3-4.8 35.8-3.2 11.5-7.7 22.2-13.6 32.1-5.9 10-12.9 19-21 27.2s-17.2 15.2-27.2 21.1c-10 5.9-20.7 10.4-32.2 13.6-11.5 3.2-23.4 4.8-35.8 4.8H1021v-269.3h81.1c12.4 0 24.3 1.6 35.8 4.8 11.5 3.2 22.2 7.7 32.2 13.6 10 5.9 19.1 12.9 27.2 21.1 8.1 8.2 15.1 17.3 21 27.2 5.9 10 10.4 20.7 13.6 32.1 3.2 11.6 4.8 23.5 4.8 35.9zm-53.9 0c0-11.1-2.1-21.6-6.3-31.4-4.2-9.8-10-18.3-17.3-25.6-7.3-7.3-15.9-13.1-25.7-17.4-9.8-4.3-20.3-6.4-31.5-6.4h-26.9V1348h26.9c11.1 0 21.6-2.1 31.5-6.3 9.8-4.2 18.4-10 25.7-17.3 7.3-7.3 13.1-15.9 17.3-25.7 4.2-9.8 6.3-20.3 6.3-31.4zm188.9 134.6h-53.9v-269.3h53.9v269.3zm359.1-133.5c0 12.8-1.7 25.1-5 36.9-3.3 11.8-8 22.9-14 33.2-6 10.3-13.3 19.7-21.8 28.3-8.5 8.5-17.9 15.8-28.2 21.9-10.3 6.1-21.3 10.8-33.2 14.1-11.9 3.3-24.2 5-37 5s-25.1-1.7-36.9-5c-11.8-3.3-22.9-8-33.2-14.1-10.3-6.1-19.7-13.4-28.3-21.9-8.5-8.5-15.8-17.9-21.9-28.3-6.1-10.3-10.8-21.4-14.1-33.2-3.3-11.8-5-24.1-5-36.9 0-12.8 1.7-25.1 5-37 3.3-11.9 8-23 14.1-33.2 6.1-10.3 13.4-19.7 21.9-28.2 8.5-8.5 17.9-15.8 28.3-21.8 10.3-6 21.4-10.7 33.2-14 11.8-3.3 24.1-5 36.9-5 12.8 0 25.1 1.7 37 5 11.9 3.3 23 8 33.2 14 10.3 6 19.7 13.3 28.2 21.8s15.8 17.9 21.8 28.2 10.7 21.3 14 33.2c3.4 11.9 5 24.2 5 37zm-53.5 0c0-11.8-2.3-22.9-6.8-33.3-4.5-10.5-10.6-19.5-18.3-27.2-7.7-7.7-16.8-13.8-27.2-18.3-10.5-4.5-21.6-6.8-33.3-6.8-11.9 0-23 2.3-33.4 6.8-10.4 4.5-19.5 10.6-27.2 18.3-7.8 7.7-13.9 16.8-18.4 27.2-4.5 10.5-6.8 21.6-6.8 33.3 0 11.8 2.3 22.8 6.8 33.1s10.6 19.4 18.4 27.1c7.8 7.8 16.8 13.9 27.2 18.4 10.4 4.5 21.5 6.8 33.4 6.8 11.8 0 22.9-2.3 33.3-6.8 10.5-4.5 19.5-10.6 27.2-18.4 7.7-7.8 13.8-16.8 18.3-27.1s6.8-21.3 6.8-33.1z"
+          />
+        </svg>
+      </>
+    )
+  }
 }
 
-export default Logo;
+export default Logo

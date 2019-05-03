@@ -1,4 +1,4 @@
-/* html {
+html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -619,10 +619,10 @@ pre tt:after {
   html {
     font-size: 100%;
   }
-} */
+} 
 
 body {
-  animation: bg 12s ease forwards;
+  animation: bg 1s ease forwards;
 }
 
 @keyframes bg {
@@ -681,61 +681,61 @@ body {
   to {
       opacity: 1;
   }
-}
+}*/
 .d {
   stroke-dasharray: 1849 1851;
   stroke-dashoffset: 1850;
   stroke: var(--primary8);
-  animation: d_draw2 var(--duration) var(--easing) 1s forwards,
-      hide 500ms 6s ease forwards;
+  /* animation: d_draw2 var(--duration) var(--easing) 1s forwards,
+      hide 500ms 6s ease forwards; */
 }
 .d_copy {
   stroke-dasharray: 1849 1851;
   stroke-dashoffset: 1850;
   stroke: var(--primary7);
-  animation: d_draw2 var(--duration) var(--easing) 1s forwards,
-      hide 500ms 6s ease forwards;
+  /* animation: d_draw2 var(--duration) var(--easing) 1s forwards,
+      hide 500ms 6s ease forwards; */
 } 
 .d_copy1 {
   stroke-dasharray: 1849 1851;
   stroke-dashoffset: 1850;
   stroke: var(--primary6);
-  animation: d_draw2 var(--duration) var(--easing) 1.3s forwards,
-      hide 500ms 6s ease forwards;
+  /* animation: d_draw2 var(--duration) var(--easing) 1.3s forwards,
+      hide 500ms 6s ease forwards; */
 }
 .d_copy2 {
   stroke-dasharray: 1849 1851;
   stroke-dashoffset: 1850;
   stroke: var(--primary5);
-  animation: d_draw2 var(--duration) var(--easing) 1.3s forwards,
-      hide 500ms 6s ease forwards;
+  /* animation: d_draw2 var(--duration) var(--easing) 1.3s forwards,
+      hide 500ms 6s ease forwards; */
 }
 .d_copy3 {
   stroke-dasharray: 1849 1851;
   stroke-dashoffset: 1850;
   stroke: var(--primary4);
-  animation: d_draw2 var(--duration) var(--easing) 1.6s forwards,
-      hide 500ms 6s ease forwards;
+  /* animation: d_draw2 var(--duration) var(--easing) 1.6s forwards,
+      hide 500ms 6s ease forwards; */
 }
 .d_copy4 {
   stroke-dasharray: 1849 1851;
   stroke-dashoffset: 1850;
   stroke: var(--primary3);
-  animation: d_draw2 var(--duration) var(--easing) 2.0s forwards,
-      hide 500ms 6s ease forwards;
+  /* animation: d_draw2 var(--duration) var(--easing) 2.0s forwards,
+      hide 500ms 6s ease forwards; */
 }
 .d_copy5 {
   stroke-dasharray: 1849 1851;
   stroke-dashoffset: 1850;
   stroke: var(--primary2);
-  animation: d_draw2 var(--duration) var(--easing) 2.3s forwards,
-      hide 500ms 6s ease forwards;
+  /* animation: d_draw2 var(--duration) var(--easing) 2.3s forwards,
+      hide 500ms 6s ease forwards; */
 }
 .d_copy6 {
   stroke-dasharray: 1849 1851;
   stroke-dashoffset: 1850;
   stroke: var(--primary1);
-  animation: d_draw var(--duration) var(--easing) 2.6s forwards;
+  /* animation: d_draw var(--duration) var(--easing) 2.6s forwards; */
 }
 @keyframes d_draw {
   50% {
@@ -777,46 +777,47 @@ body {
       stroke-dashoffset: 200;
   }
 }
+
 .o path:nth-child(1) {
   stroke-dasharray: 1695 1697;
   stroke-dashoffset: 1696;
   stroke: var(--primary6);
-  animation: o_draw var(--duration) var(--easing) 2.5s forwards,
-      hide 500ms 8s ease forwards;
+  /* animation: o_draw var(--duration) var(--easing) 2.5s forwards,
+      hide 500ms 8s ease forwards; */
 }
 .o path:nth-child(2) {
   stroke-dasharray: 1695 1697;
   stroke-dashoffset: 1696;
   stroke: var(--primary5);
-  animation: o_draw var(--duration) var(--easing) 2.7s forwards,
-      hide 500ms 8s ease forwards;
+  /* animation: o_draw var(--duration) var(--easing) 2.7s forwards,
+      hide 500ms 8s ease forwards; */
 }
 .o path:nth-child(3) {
   stroke-dasharray: 1695 1697;
   stroke-dashoffset: 1696;
   stroke: var(--primary4);
-  animation: o_draw var(--duration) var(--easing) 2.9s forwards,
-      hide 500ms 8s ease forwards;
+  /* animation: o_draw var(--duration) var(--easing) 2.9s forwards,
+      hide 500ms 8s ease forwards; */
 }
 .o path:nth-child(4) {
   stroke-dasharray: 1695 1697;
   stroke-dashoffset: 1696;
   stroke: var(--primary3);
-  animation: o_draw var(--duration) var(--easing) 3.2s forwards,
-      hide 500ms 8s ease forwards;
+  /* animation: o_draw var(--duration) var(--easing) 3.2s forwards,
+      hide 500ms 8s ease forwards; */
 }
 .o path:nth-child(5) {
   stroke-dasharray: 1695 1697;
   stroke-dashoffset: 1696;
   stroke: var(--primary2);
-  animation: o_draw var(--duration) var(--easing) 3.4s forwards,
-      hide 500ms 8s ease forwards;
+  /* animation: o_draw var(--duration) var(--easing) 3.4s forwards,
+      hide 500ms 8s ease forwards; */
 }
 .o path:nth-child(6) {
   stroke-dasharray: 1695 1697;
   stroke-dashoffset: 1696;
   stroke: var(--primary1);
-  animation: o_draw var(--duration) var(--easing) 3.6s forwards;
+  /* animation: o_draw var(--duration) var(--easing) 3.6s forwards; */
 }
 .kl path:nth-child(1) {
   stroke-dasharray: 908 910;
@@ -829,76 +830,76 @@ body {
   stroke-dasharray: 908 910;
   stroke-dashoffset: 909;
   stroke: var(--primary5);
-  animation: k_draw var(--duration) var(--easing) 4.2s forwards,
-      hide 500ms dd ease forwards;
+  /* animation: k_draw var(--duration) var(--easing) 4.2s forwards,
+      hide 500ms dd ease forwards; */
 }
 .kl path:nth-child(3) {
   stroke-dasharray: 908 910;
   stroke-dashoffset: 909;
   stroke: var(--primary4);
-  animation: k_draw var(--duration) var(--easing) 4.4s forwards,
-      hide 500ms 8s ease forwards;
+  /* animation: k_draw var(--duration) var(--easing) 4.4s forwards,
+      hide 500ms 8s ease forwards; */
 }
 .kl path:nth-child(4) {
   stroke-dasharray: 908 910;
   stroke-dashoffset: 909;
   stroke: var(--primary3);
-  animation: k_draw var(--duration) var(--easing) 4.7s forwards,
-      hide 500ms 8s ease forwards;
+  /* animation: k_draw var(--duration) var(--easing) 4.7s forwards,
+      hide 500ms 8s ease forwards; */
 }
 .kl path:nth-child(5) {
   stroke-dasharray: 908 910;
   stroke-dashoffset: 909;
   stroke: var(--primary2);
-  animation: k_draw var(--duration) var(--easing) 4.8s forwards,
-      hide 500ms 8s ease forwards;
+  /* animation: k_draw var(--duration) var(--easing) 4.8s forwards,
+      hide 500ms 8s ease forwards; */
 }
 .kl path:nth-child(6) {
   stroke-dasharray: 908 910;
   stroke-dashoffset: 909;
   stroke: var(--primary1);
-  animation: k_draw var(--duration) var(--easing) 5s forwards;
-}
+  /* animation: k_draw var(--duration) var(--easing) 5s forwards;
+*/} 
 .kc path:nth-child(1) {
   stroke-dasharray: 853 855;
   stroke-dashoffset: 854;
   stroke: var(--primary6);
-  animation: k_draw var(--duration) var(--easing) 5.2s forwards,
-      hide 500ms 9s ease forwards;
+  /* animation: k_draw var(--duration) var(--easing) 5.2s forwards,
+      hide 500ms 9s ease forwards; */
 }
 .kc path:nth-child(2) {
   stroke-dasharray: 853 855;
   stroke-dashoffset: 854;
   stroke: var(--primary5);
-  animation: k_draw var(--duration) var(--easing) 5.4s forwards,
-      hide 500ms 9s ease forwards;
+  /* animation: k_draw var(--duration) var(--easing) 5.4s forwards,
+      hide 500ms 9s ease forwards; */
 }
 .kc path:nth-child(3) {
   stroke-dasharray: 853 855;
   stroke-dashoffset: 854;
   stroke: var(--primary4);
-  animation: k_draw var(--duration) var(--easing) 5.6s forwards,
-      hide 500ms 9s ease forwards;
+  /* animation: k_draw var(--duration) var(--easing) 5.6s forwards,
+      hide 500ms 9s ease forwards; */
 }
 .kc path:nth-child(4) {
   stroke-dasharray: 853 855;
   stroke-dashoffset: 854;
   stroke: var(--primary3);
-  animation: k_draw var(--duration) var(--easing) 5.8s forwards,
-      hide 500ms 9s ease forwards;
+  /* animation: k_draw var(--duration) var(--easing) 5.8s forwards,
+      hide 500ms 9s ease forwards; */
 }
 .kc path:nth-child(5) {
   stroke-dasharray: 853 855;
   stroke-dashoffset: 854;
   stroke: var(--primary2);
-  animation: k_draw var(--duration) var(--easing) 6s forwards,
-      hide 500ms 9s ease forwards;
+  /* animation: k_draw var(--duration) var(--easing) 6s forwards,
+      hide 500ms 9s ease forwards; */
 }
 .kc path:nth-child(6) {
   stroke-dasharray: 853 855;
   stroke-dashoffset: 854;
   stroke: var(--primary1);
-  animation: k_draw var(--duration) var(--easing) 6.2s forwards;
+  /* animation: k_draw var(--duration) var(--easing) 6.2s forwards; */
 }
 */
 .dok_0 {
