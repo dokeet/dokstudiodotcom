@@ -622,12 +622,12 @@ pre tt:after {
 } 
 
 body {
-  animation: bg 12s ease forwards;
+  animation: bg 8s ease forwards;
 }
 
 @keyframes bg {
   0% {
-      background-color: hsl(338, 96%, 45%);
+      background-color: hsl(0, 0%, 100%);
   }
 
   100% {
@@ -1357,13 +1357,4 @@ body {
   stroke-dashoffset: 1977;
   stroke: var(--linescolor);
   /* animation: dok_draw var(--lines) ease-in-out 0ms forwards; */
-}
-@keyframes dok_draw {
-  75% {
-      opacity: 0.5;
-  }
-  100% {
-      opacity: 0;
-      stroke-dashoffset: 0;
-  }
 }
