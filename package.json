@@ -13,7 +13,7 @@
     "gatsby-plugin-sharp": "^2.0.35",
     "gatsby-source-filesystem": "^2.0.32",
     "gatsby-transformer-sharp": "^2.1.18",
-    "gsap": "^2.1.2",
+    "gsap": "^3.6.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-color": "^2.17.3",
